@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SwaKrut — Performance Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #f8fafc; --surface: #ffffff; --surface2: #f1f5f9;
+    --blue: #4f46e5; --blue-light: #6366f1; --cyan: #0ea5e9;
+    --green: #16a34a; --yellow: #d97706; --red: #dc2626;
+    --text: #0f172a; --muted: #64748b; --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.07);
+    --shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; -webkit-font-smoothing:antialiased; }
+
+  nav {
+    height: 60px; background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    border-bottom: 1px solid var(--border); display: flex; align-items: center;
+    justify-content: space-between; padding: 0 24px; position: sticky; top: 0; z-index: 50;
+  }
+  .nav-logo { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800;
+    color: var(--blue); text-decoration: none; }
+  .btn { padding: 8px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+    cursor: pointer; font-family: 'DM Sans', sans-serif; border: none; transition: all 0.2s;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 0 16px rgba(37,99,235,0.35); }
+  .btn-primary:hover { background: var(--blue-light); }
+  .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); }
+  .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
+  .btn-green { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: #86efac; }
+  .btn-green:hover { background: rgba(34,197,94,0.2); }
+
+  .page { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+
+  /* HEADER */
+  .report-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
+  .report-title h1 { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; margin-bottom: 4px; }
+  .report-title p { color: var(--muted); font-size: 0.92rem; }
+  .report-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .meta-badge { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 0.82rem; }
+  .meta-badge span { color: var(--muted); display: block; font-size: 0.72rem; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* SCORE RING */
+  .score-hero { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 24px; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+  .ring-wrap { position: relative; width: 160px; height: 160px; flex-shrink: 0; }
+  canvas#scoreRing { position: absolute; inset: 0; }
+  .ring-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .ring-num { font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800; line-height: 1;
+    background: linear-gradient(135deg, var(--blue-light), var(--cyan));
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+color: transparent; }
+  .ring-sub { font-size: 0.72rem; color: var(--muted); }
+  .score-summary h2 { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
+  .score-summary p { color: var(--muted); line-height: 1.7; margin-bottom: 16px; font-size: 0.95rem; }
+  .grade-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; border-radius: 100px; font-weight: 700; font-size: 0.9rem; }
+  .grade-A { background: rgba(22,163,74,0.10); border: 1px solid rgba(22,163,74,0.25); color: #15803d; }
+  .grade-B { background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.3); color: var(--blue-light); }
+  .grade-C { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: #fcd34d; }
+  .grade-D { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); color: #fca5a5; }
+
+  /* GRID */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+  .card h3 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .card-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px; }
+
+  /* DIMENSION BARS */
+  .dim-row { margin-bottom: 18px; }
+  .dim-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .dim-name { font-size: 0.88rem; font-weight: 600; }
+  .dim-score { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; }
+  .dim-bar { height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden; }
+  .dim-fill { height: 100%; border-radius: 4px; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); width: 0%; }
+  .dim-feedback { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+  /* Q&A REVIEW */
+  .qa-list { display: flex; flex-direction: column; gap: 16px; }
+  .qa-item { background: var(--surface2); border-radius: 12px; padding: 20px; border-left: 3px solid transparent; border:1px solid var(--border); border-left-width:3px; }
+  .qa-item.good { border-color: var(--green); }
+  .qa-item.ok { border-color: var(--blue); }
+  .qa-item.poor { border-color: var(--yellow); }
+  .qa-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+  .qa-qnum { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; }
+  .qa-score-badge { padding: 2px 10px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; }
+  .score-good { background: rgba(34,197,94,0.15); color: #86efac; }
+  .score-ok { background: rgba(37,99,235,0.15); color: var(--blue-light); }
+  .score-poor { background: rgba(245,158,11,0.15); color: #fcd34d; }
+  .qa-q { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; line-height: 1.5; }
+  .qa-a { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 10px; font-style: italic; }
+  .qa-a-empty { font-size: 0.82rem; color: rgba(148,163,184,0.4); font-style: italic; }
+  .qa-ai-feedback { background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.15); border-radius: 8px; padding: 10px 14px; font-size: 0.82rem; color: var(--muted); }
+  .qa-ai-feedback strong { color: var(--cyan); }
+
+  /* STRENGTHS / IMPROVEMENTS */
+  .sw-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .sw-item { display: flex; gap: 10px; font-size: 0.88rem; line-height: 1.5; }
+  .sw-icon { flex-shrink: 0; width: 20px; }
+
+  /* RADAR CHART */
+  .radar-wrap { display: flex; justify-content: center; }
+
+  /* SPEECH */
+  .speech-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .speech-stat { text-align: center; background: var(--surface2); border-radius: 10px; padding: 16px; }
+  .speech-stat-val { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; }
+  .speech-stat-label { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+
+  /* PRINT */
+  @media print {
+    nav { display: none; }
+    .btn { display: none; }
+    body { background: #fff; color: #000; }
+    .card { border: 1px solid #ddd; break-inside: avoid; }
+  }
+  @media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .score-hero { grid-template-columns: 1fr; text-align: center; }
+    .ring-wrap { margin: 0 auto; }
+    .speech-stats { grid-template-columns: 1fr; }
+  }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <div style="width:34px;height:34px;background:#4f46e5;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="11" rx="4"/><path d="M5 14c0 3.866 3.134 7 7 7s7-3.134 7-7"/><line x1="12" y1="21" x2="12" y2="24"/></svg>
+    </div>
+    <div style="line-height:1.1;">
+      <span style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:#0f172a;display:block;">SwaKrut</span>
+      <span style="font-size:0.6rem;color:#64748b;font-weight:500;letter-spacing:0.04em;display:block;">Crafting the Professional in You</span>
+    </div>
+  </a>
+  <div style="display:flex;gap:8px">
+    <button class="btn btn-green" onclick="window.print()">Download Report</button>
+    <a href="interview.html" class="btn btn-primary">Retake Interview</a>
+    <a href="index.html" class="btn btn-ghost">Home</a>
+  </div>
+</nav>
+
+<div class="page" id="report-page">
+
+  <!-- HEADER -->
+  <div class="report-header reveal">
+    <div class="report-title">
+      <h1>📊 Performance Report</h1>
+      <p id="report-subtitle">Your SwaKrut interview session analysis</p>
+    </div>
+    <div class="report-meta">
+      <div class="meta-badge"><span>Candidate</span><strong id="meta-name">—</strong></div>
+      <div class="meta-badge"><span>Role</span><strong id="meta-role">—</strong></div>
+      <div class="meta-badge"><span>Duration</span><strong id="meta-duration">—</strong></div>
+      <div class="meta-badge"><span>Questions</span><strong id="meta-questions">—</strong></div>
+      <div class="meta-badge"><span>Date</span><strong id="meta-date">—</strong></div>
+    </div>
+  </div>
+
+  <!-- SCORE HERO -->
+  <div class="score-hero reveal">
+    <div class="ring-wrap">
+      <canvas id="scoreRing" width="160" height="160"></canvas>
+      <div class="ring-center">
+        <div class="ring-num" id="hero-score">0</div>
+        <div class="ring-sub">/ 100</div>
+      </div>
+    </div>
+    <div class="score-summary">
+      <div class="card-tag">Overall Performance</div>
+      <h2 id="verdict-title">Calculating...</h2>
+      <p id="verdict-desc">Loading your results...</p>
+      <div class="grade-badge" id="grade-badge">—</div>
+    </div>
+  </div>
+
+  <!-- DIMENSION BREAKDOWN -->
+  <div class="card reveal" style="margin-bottom:24px">
+    <h3>📐 Dimension Breakdown</h3>
+    <div id="dim-list"></div>
+  </div>
+
+  <!-- SPEECH + RADAR -->
+  <div class="grid-2">
+    <div class="card reveal">
+      <h3>🎙️ Speech Analysis</h3>
+      <div class="speech-stats" id="speech-stats">
+        <div class="speech-stat"><div class="speech-stat-val" id="s-wpm">—</div><div class="speech-stat-label">Words / Min</div></div>
+        <div class="speech-stat"><div class="speech-stat-val" id="s-fillers">—</div><div class="speech-stat-label">Filler Words</div></div>
+        <div class="speech-stat"><div class="speech-stat-val" id="s-fluency">—</div><div class="speech-stat-label">Fluency %</div></div>
+      </div>
+    </div>
+    <div class="card reveal">
+      <h3>🕸 Skill Radar</h3>
+      <div class="radar-wrap"><canvas id="radarChart" width="220" height="220"></canvas></div>
+    </div>
+  </div>
+
+  <!-- STRENGTHS & IMPROVEMENTS -->
+  <div class="grid-2">
+    <div class="card reveal">
+      <h3>✅ Strengths</h3>
+      <ul class="sw-list" id="strengths-list"></ul>
+    </div>
+    <div class="card reveal">
+      <h3>🎯 Areas to Improve</h3>
+      <ul class="sw-list" id="improve-list"></ul>
+    </div>
+  </div>
+
+  <!-- Q&A REVIEW -->
+  <div class="card reveal" style="margin-bottom:24px">
+    <h3>💬 Question-by-Question Review</h3>
+    <div class="qa-list" id="qa-list">
+      <p style="color:var(--muted);font-size:0.9rem">No session data found. Complete an interview first.</p>
+    </div>
+  </div>
+
+  <!-- NEXT STEPS -->
+  <div class="card reveal" style="margin-bottom:40px">
+    <h3>🚀 Recommended Next Steps</h3>
+    <ul class="sw-list" id="next-steps"></ul>
+  </div>
+
+</div>
+
+<script>
+// ─── LOAD SESSION DATA ────────────────────────────────────────
+let session = null;
+try {
+  const raw = localStorage.getItem('swakrut_session');
+  if (raw) session = JSON.parse(raw);
+} catch(e) {}
+
+// Default demo data if no session exists
+if (!session) {
+  session = {
+    name: 'Demo Candidate', role: 'Software Engineer', level: 'Mid-level (3-6 years)',
+    duration: 900, questionsAnswered: 8, date: new Date().toISOString(),
+    scores: { tech: 75, comm: 70, conf: 68, eye: 74, post: 71, overall: 72 },
+    answers: [
+      { q: "Tell me about yourself and your professional journey.", a: "I'm a software engineer with 4 years of experience primarily in React and Node.js. I've worked on e-commerce platforms and fintech applications, leading small teams.", score: { tech: 72, comm: 78, conf: 70 } },
+      { q: "Describe a challenging technical problem you solved recently.", a: "We had a memory leak in production causing crashes every 6 hours. I used Chrome DevTools heap snapshots to trace it to an event listener not being cleaned up in React components.", score: { tech: 85, comm: 80, conf: 75 } },
+      { q: "How do you ensure code quality in your projects?", a: "We use a combination of ESLint, Prettier, mandatory code reviews, and an 80% test coverage requirement enforced by CI/CD.", score: { tech: 80, comm: 75, conf: 72 } },
+      { q: "How do you handle conflicts with team members?", a: "I try to understand their perspective first, then present data to support my viewpoint. I prefer synchronous conversations over Slack threads for complex disagreements.", score: { tech: 55, comm: 68, conf: 60 } },
+      { q: "What are your greatest strengths relevant to this role?", a: "Um, I think my strongest areas are system design and mentoring junior developers. I'm also quite good at debugging complex issues.", score: { tech: 60, comm: 62, conf: 55 } },
+      { q: "How do you approach system design for a high-traffic application?", a: "I start with requirements gathering — DAUs, read/write ratio, latency requirements. Then I design with horizontal scaling in mind, adding caching layers, CDNs, and load balancers where needed.", score: { tech: 88, comm: 82, conf: 78 } },
+      { q: "Where do you see yourself in 3-5 years?", a: "I'd like to move into a senior or staff engineer role, possibly leading a small team technically. I'm particularly interested in distributed systems.", score: { tech: 65, comm: 72, conf: 68 } },
+      { q: "What is your experience with cloud platforms?", a: "Primarily AWS — I've used EC2, S3, Lambda, RDS, and CloudFront extensively. I've also worked with Docker and Kubernetes for container orchestration.", score: { tech: 82, comm: 76, conf: 74 } },
+    ]
+  };
+}
+
+// ─── POPULATE META ────────────────────────────────────────────
+document.getElementById('meta-name').textContent = session.name || 'Unknown';
+document.getElementById('meta-role').textContent = session.role || 'Not set';
+document.getElementById('meta-duration').textContent = formatDuration(session.duration);
+document.getElementById('meta-questions').textContent = (session.questionsAnswered || 0) + ' answered';
+document.getElementById('meta-date').textContent = new Date(session.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+document.getElementById('report-subtitle').textContent = `${session.role} interview • ${session.level || ''}`;
+
+function formatDuration(s) {
+  if (!s) return '—';
+  const m = Math.floor(s / 60), sec = s % 60;
+  return `${m}m ${sec}s`;
+}
+
+// ─── SCORES ───────────────────────────────────────────────────
+const sc = session.scores || {};
+const tech = sc.tech || 0;
+const comm = sc.comm || 0;
+const conf = sc.conf || 0;
+const eye  = sc.eye || 0;
+const post = sc.post || 0;
+const overall = sc.overall || Math.round((tech + comm + conf + eye + post) / 5);
+
+// ─── SCORE RING ───────────────────────────────────────────────
+function drawRing(canvas, score, color) {
+  const ctx = canvas.getContext('2d');
+  const cx = canvas.width / 2, cy = canvas.height / 2, r = 68;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Track
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(255,255,255,0.07)'; ctx.lineWidth = 10; ctx.stroke();
+
+  // Glow
+  ctx.shadowBlur = 16; ctx.shadowColor = color;
+
+  // Fill (animated)
+  let pct = 0;
+  const target = score / 100;
+  const animate = () => {
+    pct = Math.min(pct + 0.015, target);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(255,255,255,0.07)'; ctx.lineWidth = 10; ctx.shadowBlur = 0; ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, -Math.PI / 2, -Math.PI / 2 + pct * Math.PI * 2);
+    const grad = ctx.createLinearGradient(cx - r, cy, cx + r, cy);
+    grad.addColorStop(0, '#4f46e5'); grad.addColorStop(1, '#0ea5e9');
+    ctx.strokeStyle = grad; ctx.lineWidth = 10; ctx.lineCap = 'round';
+    ctx.shadowBlur = 20; ctx.shadowColor = '#4f46e5'; ctx.stroke();
+    if (pct < target) requestAnimationFrame(animate);
+  };
+  animate();
+}
+
+// Animate score number
+function animateNum(el, target, suffix='') {
+  let cur = 0; const step = target / 60;
+  const t = setInterval(() => {
+    cur = Math.min(cur + step, target);
+    el.textContent = Math.round(cur) + suffix;
+    if (cur >= target) clearInterval(t);
+  }, 16);
+}
+
+setTimeout(() => {
+  drawRing(document.getElementById('scoreRing'), overall, '#3b82f6');
+  animateNum(document.getElementById('hero-score'), overall);
+}, 300);
+
+// Grade
+function getGrade(score) {
+  if (score >= 85) return { grade: 'A', label: 'Excellent', cls: 'grade-A', emoji: '🏆' };
+  if (score >= 70) return { grade: 'B', label: 'Good', cls: 'grade-B', emoji: '👍' };
+  if (score >= 55) return { grade: 'C', label: 'Fair', cls: 'grade-C', emoji: '📈' };
+  return { grade: 'D', label: 'Needs Work', cls: 'grade-D', emoji: '💪' };
+}
+const g = getGrade(overall);
+document.getElementById('grade-badge').textContent = `${g.emoji} Grade ${g.grade} — ${g.label}`;
+document.getElementById('grade-badge').className = 'grade-badge ' + g.cls;
+document.getElementById('verdict-title').textContent = getVerdict(overall);
+document.getElementById('verdict-desc').textContent = getVerdictDesc(overall, session.role);
+
+function getVerdict(s) {
+  if (s >= 85) return 'Outstanding Performance 🌟';
+  if (s >= 75) return 'Strong Candidate 💼';
+  if (s >= 60) return 'Promising — Keep Practicing 📈';
+  return 'Room for Growth — Don\'t Give Up 💪';
+}
+function getVerdictDesc(s, role) {
+  if (s >= 85) return `You demonstrated exceptional skill across all dimensions for a ${role} role. You're ready for real interviews.`;
+  if (s >= 75) return `Solid performance for a ${role} position. You showed strong technical knowledge with minor areas to polish.`;
+  if (s >= 60) return `A decent foundation for a ${role} role, but more practice on structure and confidence will significantly improve your score.`;
+  return `Your answers showed potential, but structured practice on technical depth and delivery will be key to cracking ${role} interviews.`;
+}
+
+// ─── DIMENSION BREAKDOWN ──────────────────────────────────────
+const dims = [
+  { name: 'Technical Knowledge', score: tech, color: '#3b82f6', icon: '🧠',
+    feedback: tech >= 75 ? 'Strong technical answers with good depth.' : tech >= 55 ? 'Technical answers were adequate but lacked depth in some areas.' : 'Work on articulating technical concepts more clearly with examples.' },
+  { name: 'Communication', score: comm, color: '#06b6d4', icon: '🗣️',
+    feedback: comm >= 75 ? 'Clear, structured communication throughout.' : comm >= 55 ? 'Communication was decent but answers could be better structured.' : 'Practice the STAR method (Situation, Task, Action, Result) for structured answers.' },
+  { name: 'Confidence', score: conf, color: '#f59e0b', icon: '💪',
+    feedback: conf >= 75 ? 'Projected confidence and certainty in your answers.' : conf >= 55 ? 'Confidence was moderate — reduce filler words and speak more assertively.' : 'Work on reducing "um/uh" and speaking at a steady, deliberate pace.' },
+  { name: 'Eye Contact', score: eye, color: '#22c55e', icon: '👁️',
+    feedback: eye >= 75 ? 'Good eye contact maintained with the camera.' : 'Try to focus more on the camera lens rather than the screen.' },
+  { name: 'Posture', score: post, color: '#a78bfa', icon: '🧍',
+    feedback: post >= 75 ? 'Maintained upright, professional posture throughout.' : 'Work on keeping your back straight and shoulders relaxed on camera.' },
+];
+
+const dimList = document.getElementById('dim-list');
+dims.forEach(d => {
+  const el = document.createElement('div');
+  el.className = 'dim-row';
+  el.innerHTML = `
+    <div class="dim-header">
+      <span class="dim-name">${d.icon} ${d.name}</span>
+      <span class="dim-score" style="color:${d.color}">${d.score}</span>
+    </div>
+    <div class="dim-bar"><div class="dim-fill" style="background:${d.color}" data-width="${d.score}%"></div></div>
+    <div class="dim-feedback">${d.feedback}</div>
+  `;
+  dimList.appendChild(el);
+});
+
+// Animate bars on scroll
+setTimeout(() => {
+  document.querySelectorAll('.dim-fill').forEach(el => {
+    el.style.width = el.dataset.width;
+  });
+}, 500);
+
+// ─── SPEECH STATS ─────────────────────────────────────────────
+const totalWords = session.answers.reduce((acc, a) => acc + (a.a || '').split(/\s+/).filter(w=>w).length, 0);
+const wpm = session.duration > 0 ? Math.round(totalWords / (session.duration / 60)) : 0;
+const fillerCount = session.answers.reduce((acc, a) => {
+  const text = (a.a || '').toLowerCase();
+  return acc + ['um','uh','like','you know','basically'].reduce((c,f) => c + (text.split(f).length - 1), 0);
+}, 0);
+const fluency = Math.round(Math.max(0, 100 - (fillerCount / Math.max(totalWords, 1)) * 300));
+document.getElementById('s-wpm').textContent = wpm || '—';
+document.getElementById('s-fillers').textContent = fillerCount;
+document.getElementById('s-fluency').textContent = fluency + '%';
+document.getElementById('s-wpm').style.color = wpm >= 120 && wpm <= 160 ? '#22c55e' : '#f59e0b';
+document.getElementById('s-fillers').style.color = fillerCount <= 3 ? '#22c55e' : fillerCount <= 8 ? '#f59e0b' : '#ef4444';
+document.getElementById('s-fluency').style.color = fluency >= 80 ? '#22c55e' : fluency >= 60 ? '#f59e0b' : '#ef4444';
+
+// ─── RADAR CHART ──────────────────────────────────────────────
+function drawRadar(canvas, data, labels) {
+  const ctx = canvas.getContext('2d');
+  const cx = canvas.width / 2, cy = canvas.height / 2;
+  const r = 80; const n = data.length;
+  const angle = (i) => (Math.PI * 2 * i / n) - Math.PI / 2;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Grid rings
+  [0.25, 0.5, 0.75, 1].forEach(pct => {
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) {
+      const x = cx + r * pct * Math.cos(angle(i));
+      const y = cy + r * pct * Math.sin(angle(i));
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.closePath(); ctx.strokeStyle = 'rgba(255,255,255,0.07)'; ctx.lineWidth = 1; ctx.stroke();
+  });
+
+  // Axes
+  for (let i = 0; i < n; i++) {
+    ctx.beginPath(); ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + r * Math.cos(angle(i)), cy + r * Math.sin(angle(i)));
+    ctx.strokeStyle = 'rgba(255,255,255,0.1)'; ctx.lineWidth = 1; ctx.stroke();
+  }
+
+  // Data polygon
+  ctx.beginPath();
+  data.forEach((v, i) => {
+    const x = cx + r * (v/100) * Math.cos(angle(i));
+    const y = cy + r * (v/100) * Math.sin(angle(i));
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.closePath();
+  const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+  grad.addColorStop(0, 'rgba(79,70,229,0.4)'); grad.addColorStop(1, 'rgba(14,165,233,0.15)');
+  ctx.fillStyle = grad; ctx.fill();
+  ctx.strokeStyle = '#4f46e5'; ctx.lineWidth = 2; ctx.stroke();
+
+  // Labels
+  ctx.font = '600 10px DM Sans'; ctx.fillStyle = '#94a3b8'; ctx.textAlign = 'center';
+  labels.forEach((label, i) => {
+    const x = cx + (r + 18) * Math.cos(angle(i));
+    const y = cy + (r + 18) * Math.sin(angle(i)) + 4;
+    ctx.fillText(label, x, y);
+  });
+}
+
+setTimeout(() => {
+  drawRadar(
+    document.getElementById('radarChart'),
+    [tech, comm, conf, eye, post],
+    ['Technical', 'Comms', 'Confidence', 'Eye Contact', 'Posture']
+  );
+}, 400);
+
+// ─── STRENGTHS & IMPROVEMENTS ────────────────────────────────
+const strengths = [], improvements = [];
+
+if (tech >= 75) strengths.push('Strong technical depth and domain knowledge.');
+else improvements.push('Deepen technical answers with concrete examples and metrics.');
+
+if (comm >= 75) strengths.push('Clear, structured communication with good pacing.');
+else improvements.push('Use the STAR method (Situation, Task, Action, Result) to structure answers.');
+
+if (conf >= 70) strengths.push('Projected confidence and spoke assertively.');
+else improvements.push('Reduce filler words (um, uh, like) and practice speaking slower.');
+
+if (eye >= 70) strengths.push('Maintained good eye contact with the camera.');
+else improvements.push('Focus on the camera lens, not your screen, while speaking.');
+
+if (post >= 70) strengths.push('Professional posture maintained throughout the session.');
+else improvements.push('Practice sitting upright with shoulders back on camera.');
+
+if (fluency >= 75) strengths.push('Fluent speech with minimal hesitations.');
+if (totalWords > 400) strengths.push('Gave detailed, comprehensive answers.');
+else improvements.push('Aim for 80-120 word answers — elaborate more with examples.');
+
+if (strengths.length === 0) strengths.push('Completed the full interview session — that takes courage!');
+if (improvements.length === 0) improvements.push('Maintain this high standard across more practice sessions.');
+
+document.getElementById('strengths-list').innerHTML =
+  strengths.map(s => `<li class="sw-item"><span class="sw-icon">✅</span><span>${s}</span></li>`).join('');
+document.getElementById('improve-list').innerHTML =
+  improvements.map(s => `<li class="sw-item"><span class="sw-icon">🎯</span><span>${s}</span></li>`).join('');
+
+// ─── Q&A REVIEW ───────────────────────────────────────────────
+const qaList = document.getElementById('qa-list');
+if (session.answers && session.answers.length > 0) {
+  qaList.innerHTML = session.answers.map((a, i) => {
+    const avgScore = a.score ? Math.round((a.score.tech + a.score.comm + a.score.conf) / 3) : 0;
+    const isAnswered = a.a && a.a.trim().length > 0;
+    const isSkipped = !isAnswered || a.status === 'skip';
+    // Border color: green if answered, yellow/orange if skipped
+    const cls = isAnswered ? 'good' : 'poor';
+    const badgeCls = avgScore >= 75 ? 'score-good' : avgScore >= 55 ? 'score-ok' : 'score-poor';
+    // Use real LLM feedback stored in session, fallback to heuristic
+    const aiFeedback   = a.aiFeedback   || getAIFeedbackHeuristic(a.a, a.score, a.q);
+    const strengths    = a.strengths    || [];
+    const improvements = a.improvements || [];
+
+    const strengthsHtml = strengths.length
+      ? `<div style="margin-top:8px;font-size:0.78rem;color:#86efac;">✅ ${strengths.join(' · ')}</div>`
+      : '';
+    const improvementsHtml = improvements.length
+      ? `<div style="margin-top:4px;font-size:0.78rem;color:#fcd34d;">🎯 ${improvements.join(' · ')}</div>`
+      : '';
+
+    return `
+    <div class="qa-item ${cls}">
+      <div class="qa-header">
+        <span class="qa-qnum">Q${i+1}</span>
+        <span class="qa-score-badge ${badgeCls}">${avgScore}/100</span>
+      </div>
+      <div class="qa-q">${a.q}</div>
+      ${a.a ? `<div class="qa-a">"${a.a.substring(0, 200)}${a.a.length > 200 ? '...' : ''}"</div>` : '<div class="qa-a-empty">No answer recorded (skipped)</div>'}
+      <div class="qa-ai-feedback">
+        <strong>🤖 AI Feedback:</strong> ${aiFeedback}
+        ${strengthsHtml}
+        ${improvementsHtml}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// Heuristic fallback when real LLM feedback is absent (offline / old session)
+function getAIFeedbackHeuristic(answer, score, question) {
+  if (!answer || answer.trim() === '') return 'No answer was recorded. Practice speaking your response out loud.';
+  const words = answer.split(/\s+/).length;
+  const hasExample  = /example|instance|specifically|when i|project|built|implemented|we had/i.test(answer);
+  const hasMetrics  = /\d+%|\d+ (users|requests|ms|seconds|hours|years|months)/i.test(answer);
+  const hasStructure= /first|then|finally|because|therefore|as a result/i.test(answer);
+  const sc  = score || {};
+  const avg = sc.tech ? Math.round((sc.tech + sc.comm + sc.conf) / 3) : 50;
+  if (avg >= 80) return hasMetrics ? 'Excellent answer with quantifiable results.' : 'Strong answer — add specific metrics to make it even more compelling.';
+  if (avg >= 65) {
+    if (!hasExample)   return 'Good answer, but add a specific real-world example from your experience.';
+    if (!hasStructure) return 'Solid content — structure your answer with the STAR method.';
+    return 'Decent answer. Quantify your impact with numbers where possible.';
+  }
+  if (words < 20) return 'Answer was too brief. Aim for 80-120 words with clear reasoning.';
+  return 'The answer lacked depth. Mention specific technologies, outcomes, or challenges you faced.';
+}
+
+// ─── NEXT STEPS ───────────────────────────────────────────────
+const nextSteps = [
+  `Practice 2-3 more ${session.role} mock interviews this week to build consistency.`,
+];
+if (tech < 75) nextSteps.push('Review core technical concepts for your role — focus on system design and algorithms.');
+if (comm < 70) nextSteps.push('Study the STAR method and write out structured answers to your 5 weakest questions.');
+if (conf < 65) nextSteps.push('Record yourself speaking for 2 minutes daily to reduce filler words and build vocal confidence.');
+if (fillerCount > 5) nextSteps.push('Do a "filler word detox" — speak in front of a mirror and pause instead of saying "um/uh".');
+nextSteps.push('Research the company thoroughly — tailor your answers to their tech stack and culture.');
+nextSteps.push('Prepare 3-5 strong stories from your experience using the STAR framework before your real interview.');
+
+document.getElementById('next-steps').innerHTML =
+  nextSteps.map(s => `<li class="sw-item"><span class="sw-icon">🚀</span><span>${s}</span></li>`).join('');
+
+// ─── SCROLL REVEAL ────────────────────────────────────────────
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+</script>
+</body>
+</html>

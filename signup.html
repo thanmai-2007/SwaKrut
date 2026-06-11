@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Create Account — SwaKrut</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style-light.css"/>
+  <script defer src="assets/js/auth.js"></script>
+  <style>
+    body{margin:0;}
+    .auth-wrap{display:flex;min-height:100vh;}
+    .auth-left{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:48px 40px;background:linear-gradient(145deg,#4f46e5 0%,#0ea5e9 100%);position:relative;overflow:hidden;}
+    .auth-left::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 80%,rgba(255,255,255,0.08) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(255,255,255,0.06) 0%,transparent 50%);}
+    .auth-brand{position:relative;text-align:center;}
+    .auth-brand-icon{width:76px;height:76px;background:rgba(255,255,255,0.18);border:2px solid rgba(255,255,255,0.3);border-radius:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+    .auth-brand-icon svg{width:40px;height:40px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+    .auth-brand h1{font-family:'Syne',sans-serif;font-size:2.6rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:8px;}
+    .auth-brand p{color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.6;max-width:280px;margin:0 auto;}
+    .auth-steps{margin-top:36px;display:flex;flex-direction:column;gap:14px;text-align:left;max-width:260px;}
+    .auth-step{display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,0.85);font-size:0.85rem;line-height:1.5;}
+    .auth-step-num{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.22);border:1px solid rgba(255,255,255,0.35);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#fff;flex-shrink:0;margin-top:1px;}
+    .auth-right{width:480px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:48px 40px;background:#fff;}
+    .auth-form{width:100%;max-width:360px;}
+    .auth-form h2{font-family:'Syne',sans-serif;font-size:1.75rem;font-weight:800;color:var(--text);margin-bottom:4px;}
+    .auth-sub{color:var(--muted);font-size:0.9rem;margin-bottom:28px;}
+    .auth-sub a{color:var(--indigo);text-decoration:none;font-weight:600;}
+    .divider{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--muted2);font-size:0.78rem;}
+    .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border);}
+    @media(max-width:768px){.auth-wrap{flex-direction:column;}.auth-left{padding:40px 24px;min-height:240px;}.auth-right{width:100%;padding:32px 24px;}}
+  </style>
+</head>
+<body>
+<div class="auth-wrap">
+  <div class="auth-left">
+    <div class="auth-brand">
+      <div class="auth-brand-icon">
+        <svg viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="11" rx="4"/><path d="M5 14c0 3.866 3.134 7 7 7s7-3.134 7-7"/><line x1="12" y1="21" x2="12" y2="24"/></svg>
+      </div>
+      <h1>Swa-Krut</h1>
+      <p>Crafting the Professional in You</p>
+      <div class="auth-steps">
+        <div class="auth-step"><div class="auth-step-num">1</div><span>Create your free account</span></div>
+        <div class="auth-step"><div class="auth-step-num">2</div><span>Upload your resume or paste your skills</span></div>
+        <div class="auth-step"><div class="auth-step-num">3</div><span>Start your AI-powered mock interview</span></div>
+        <div class="auth-step"><div class="auth-step-num">4</div><span>Get your confidence report and improve</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="auth-right">
+    <div class="auth-form">
+      <h2>Create account</h2>
+      <p class="auth-sub">Already have one? <a href="login.html">Sign in</a></p>
+      <div class="fg">
+        <label class="sk-label" for="regName">Full name</label>
+        <input class="sk-input" id="regName" type="text" placeholder="Your full name" autocomplete="name"/>
+      </div>
+      <div class="fg">
+        <label class="sk-label" for="regEmail">Email address</label>
+        <input class="sk-input" id="regEmail" type="email" placeholder="you@example.com" autocomplete="email"/>
+      </div>
+      <div class="fg">
+        <label class="sk-label" for="regPassword">Password</label>
+        <input class="sk-input" id="regPassword" type="password" placeholder="Choose a strong password" autocomplete="new-password"/>
+      </div>
+      <button id="registerBtn" class="btn btn-primary" style="width:100%;justify-content:center;padding:12px;">Create account</button>
+      <div class="divider">or</div>
+      <a href="login.html" class="btn btn-ghost" style="width:100%;justify-content:center;">Sign in to existing account</a>
+      <div id="regMsg" style="margin-top:10px;color:#b91c1c;font-size:0.83rem;"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

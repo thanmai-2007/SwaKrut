@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SwaKrut — Interview Session</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f8fafc; --surface:#ffffff; --surface2:#f1f5f9;
+  --blue:#4f46e5; --blue-l:#6366f1; --cyan:#0ea5e9;
+  --green:#16a34a; --yellow:#d97706; --red:#dc2626;
+  --text:#0f172a; --muted:#64748b; --border:#e2e8f0;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.07);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;overflow:hidden;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column;}
+
+.btn{padding:7px 16px;border-radius:8px;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;border:none;transition:all 0.18s;text-decoration:none;display:inline-flex;align-items:center;gap:5px;}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--muted);}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 2px 8px rgba(79,70,229,0.28);}
+.btn-primary:hover{background:var(--blue-l);}
+.btn-danger{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);color:var(--red);}
+.btn-cyan{background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.3);color:var(--cyan);}
+.btn-cyan:hover{background:rgba(6,182,212,0.2);}
+
+nav{height:58px;flex-shrink:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);box-shadow:0 1px 3px rgba(0,0,0,0.07);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:100;}
+.logo{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;color:var(--blue);text-decoration:none;}
+.nav-r{display:flex;align-items:center;gap:8px;}
+.live-pill{background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.35);color:var(--red);padding:4px 11px;border-radius:100px;font-size:0.7rem;font-weight:700;display:none;align-items:center;gap:5px;}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:blink 1.2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.12}}
+#nav-timer{font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:700;display:none;}
+
+/* SETUP */
+#setup-screen{flex:1;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:36px 20px;}
+.setup-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:38px;width:100%;max-width:560px;box-shadow:0 4px 24px rgba(0,0,0,0.08);}
+.setup-card h2{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:6px;}
+.setup-card>p{color:var(--muted);margin-bottom:24px;font-size:0.92rem;}
+.fg{margin-bottom:18px;}
+label{display:block;font-size:0.73rem;font-weight:700;margin-bottom:6px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;}
+input,select,textarea{width:100%;background:var(--surface2);border:1.5px solid var(--border);border-radius:10px;padding:11px 14px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.92rem;outline:none;transition:border-color 0.2s;}
+input:focus,select:focus,textarea:focus{border-color:var(--blue-l);}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:34px;}
+textarea{resize:vertical;min-height:80px;line-height:1.6;}
+.ferr{color:var(--red);font-size:0.76rem;margin-top:4px;display:none;}
+.upload-box{border:2px dashed var(--border);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:all 0.2s;background:var(--surface2);}
+.upload-box:hover,.upload-box.drag{border-color:var(--blue);background:rgba(79,70,229,0.04);}
+.upload-box .uico{font-size:1.7rem;margin-bottom:6px;}
+.upload-box p{color:var(--muted);font-size:0.8rem;margin:0;}
+.upload-box strong{color:var(--blue-l);}
+#file-input{display:none;}
+.file-ok{font-size:0.78rem;color:var(--green);margin-top:4px;display:none;}
+.resume-parsed{font-size:0.78rem;color:var(--blue);margin-top:6px;padding:8px 12px;background:rgba(79,70,229,0.06);border:1px solid rgba(79,70,229,0.15);border-radius:8px;display:none;}
+.start-btn{width:100%;padding:13px;font-size:0.95rem;border-radius:12px;margin-top:6px;justify-content:center;letter-spacing:0.02em;}
+.generating-qs{display:none;text-align:center;padding:12px;color:var(--muted);font-size:0.85rem;}
+
+/* INTERVIEW SCREEN */
+#interview-screen{flex:1;display:none;min-height:0;}
+.iv-wrap{display:grid;grid-template-columns:1fr 1fr 1fr;height:calc(100vh - 58px);overflow:hidden;}
+
+/* LEFT PANEL */
+.iv-left{display:flex;flex-direction:column;gap:8px;padding:12px;border-left:1px solid var(--border);overflow:hidden;background:var(--surface);}
+.cam-box{flex-shrink:0;width:100%;aspect-ratio:4/3;background:#f1f5f9;border-radius:14px;position:relative;overflow:hidden;border:1px solid var(--border);}
+#webcam{width:100%;height:100%;object-fit:cover;display:none;border-radius:14px;}
+.cam-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+.cam-ph .ico{font-size:2.8rem;}
+.cam-ph p{color:var(--muted);font-size:0.72rem;text-align:center;line-height:1.5;}
+.cam-tags{position:absolute;bottom:8px;left:8px;right:8px;display:flex;justify-content:space-between;gap:4px;pointer-events:none;}
+.ctag{background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:20px;padding:4px 9px;font-size:0.66rem;font-weight:700;letter-spacing:0.02em;}
+.tag-emo{color:#15803d;border:1px solid rgba(22,163,74,0.3);}
+.tag-post{color:#1d4ed8;border:1px solid rgba(29,78,216,0.3);}
+.met-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;flex-shrink:0;}
+.met{background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:7px 4px;text-align:center;}
+.met-val{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;}
+.met-lbl{font-size:0.56rem;color:var(--muted);margin-top:1px;text-transform:uppercase;letter-spacing:0.04em;}
+
+/* MIC ZONE */
+.mic-zone{flex-shrink:0;background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:14px;}
+.mic-btn{flex-shrink:0;width:68px;height:68px;border-radius:50%;background:var(--blue);border:none;cursor:pointer;font-size:1.9rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(79,70,229,0.35);transition:all 0.2s;}
+.mic-btn.rec{background:var(--red);box-shadow:0 0 26px rgba(239,68,68,0.6);animation:mpulse 1.4s infinite;}
+@keyframes mpulse{0%{box-shadow:0 0 0 0px rgba(239,68,68,0.6);}70%{box-shadow:0 0 0 18px rgba(239,68,68,0);}100%{box-shadow:0 0 0 0px rgba(239,68,68,0);}}
+.mic-meta{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0;}
+.mic-status{font-size:0.8rem;font-weight:700;color:var(--muted);}
+.mic-status.live{color:var(--red);}
+.rec-ind{display:none;align-items:center;gap:5px;font-size:0.7rem;color:var(--red);font-weight:700;}
+.rec-ind.on{display:flex;}
+.rec-dot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:blink 0.85s infinite;}
+.mic-tip{font-size:0.65rem;color:var(--muted);line-height:1.4;}
+.mic-clear{font-size:0.68rem;padding:4px 9px;flex-shrink:0;}
+
+/* CENTER PANEL */
+.iv-center{display:flex;flex-direction:column;gap:8px;padding:12px;overflow:hidden;}
+.q-prog-row{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.q-prog-track{flex:1;height:3px;background:rgba(0,0,0,0.06);border-radius:2px;overflow:hidden;}
+.q-prog-fill{height:100%;background:linear-gradient(90deg,#4f46e5,#0ea5e9);border-radius:2px;transition:width 0.5s ease;}
+.q-prog-lbl{font-size:0.7rem;color:var(--muted);font-weight:600;white-space:nowrap;}
+.q-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;flex-shrink:0;}
+.q-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.q-badge{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--cyan);display:flex;align-items:center;gap:6px;}
+.q-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:blink 1.5s infinite;}
+.speaking-badge{font-size:0.68rem;font-weight:700;color:var(--blue);background:rgba(79,70,229,0.1);padding:3px 9px;border-radius:100px;display:none;align-items:center;gap:4px;}
+.speaking-badge.on{display:flex;}
+.speak-wave{display:flex;gap:2px;align-items:center;}
+.speak-wave span{width:3px;background:var(--blue);border-radius:2px;animation:wave 0.8s infinite ease-in-out;}
+.speak-wave span:nth-child(1){animation-delay:0s;height:8px;}
+.speak-wave span:nth-child(2){animation-delay:0.15s;height:12px;}
+.speak-wave span:nth-child(3){animation-delay:0.3s;height:6px;}
+@keyframes wave{0%,100%{transform:scaleY(1);}50%{transform:scaleY(1.8);}}
+#q-text{font-size:1.02rem;line-height:1.72;font-weight:500;margin-bottom:13px;}
+.q-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.ans-card{flex:1;min-height:0;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px;display:flex;flex-direction:column;}
+.ans-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-shrink:0;}
+.ans-lbl{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);}
+.rec-ind2{display:none;align-items:center;gap:4px;font-size:0.7rem;color:var(--red);font-weight:700;}
+.rec-ind2.on{display:flex;}
+#ans-text{font-size:0.9rem;line-height:1.75;color:var(--muted);flex:1;overflow-y:auto;min-height:0;}
+#ans-text.has-text{color:var(--text);}
+.hint-bar{flex-shrink:0;padding:8px 14px;background:rgba(79,70,229,0.05);border:1px solid rgba(79,70,229,0.12);border-radius:9px;font-size:0.72rem;color:var(--muted);text-align:center;}
+
+/* RIGHT PANEL */
+.iv-right{border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;}
+.rp-hdr{padding:13px 14px 10px;border-bottom:1px solid var(--border);flex-shrink:0;}
+.rp-hdr h3{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;}
+.rp-hdr p{color:var(--muted);font-size:0.7rem;margin-top:2px;}
+.rp-body{flex:1;overflow-y:auto;padding:10px;display:flex;flex-direction:column;gap:8px;}
+.rp-overall{background:linear-gradient(135deg,rgba(79,70,229,0.07),rgba(14,165,233,0.04));border:1px solid rgba(79,70,229,0.16);border-radius:12px;padding:14px;text-align:center;}
+.rp-score{font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;line-height:1;color:var(--blue);}
+.rp-score-lbl{color:var(--muted);font-size:0.72rem;margin-top:2px;}
+.rp-sec{background:var(--surface2);border-radius:10px;padding:10px;}
+.rp-sec-ttl{font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:9px;}
+.sc-row{display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:0.74rem;}
+.sc-name{min-width:70px;color:var(--muted);}
+.sc-bar{flex:1;height:4px;background:rgba(0,0,0,0.07);border-radius:2px;overflow:hidden;}
+.sc-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,#4f46e5,#0ea5e9);transition:width 0.9s ease;}
+.sc-val{font-weight:700;min-width:22px;text-align:right;font-size:0.74rem;}
+.tips-box{background:var(--surface2);border-radius:10px;padding:10px;}
+.tip-row{display:flex;gap:6px;font-size:0.7rem;color:var(--muted);line-height:1.5;margin-bottom:6px;}
+.tip-dot{width:4px;height:4px;border-radius:50%;background:var(--blue);margin-top:7px;flex-shrink:0;}
+.prog-box{background:var(--surface2);border-radius:10px;padding:10px;}
+.prog-item{display:flex;align-items:center;gap:6px;font-size:0.7rem;padding:4px 6px;border-radius:6px;margin-bottom:3px;overflow:hidden;}
+.prog-item.done{background:rgba(34,197,94,0.12);color:#16a34a;}
+.prog-item.done-skip{background:rgba(249,115,22,0.12);color:#ea580c;}
+.prog-item.done-unans{background:rgba(239,68,68,0.10);color:#dc2626;}
+.prog-item.curr{background:rgba(79,70,229,0.1);color:var(--blue);}
+.prog-item.pend{color:rgba(100,116,139,0.5);}
+.prog-num{width:16px;height:16px;border-radius:50%;font-size:0.58rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.done .prog-num{background:rgba(34,197,94,0.25);}
+.done-skip .prog-num{background:rgba(249,115,22,0.2);}
+.done-unans .prog-num{background:rgba(239,68,68,0.18);}
+.curr .prog-num{background:rgba(37,99,235,0.2);}
+.pend .prog-num{background:rgba(100,116,139,0.1);}
+.prog-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+/* END SCREEN */
+#end-screen{flex:1;display:none;overflow-y:auto;align-items:center;justify-content:center;padding:40px 20px;}
+.end-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:42px;max-width:680px;width:100%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.10);}
+.end-card h2{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;margin-bottom:6px;}
+.end-card>p{color:var(--muted);margin-bottom:22px;}
+.ring-wrap{width:140px;height:140px;margin:0 auto 22px;position:relative;}
+#ring-svg{width:140px;height:140px;transform:rotate(-90deg);}
+.ring-track{fill:none;stroke:rgba(0,0,0,0.07);stroke-width:10;}
+.ring-fill-el{fill:none;stroke:url(#rgrad);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.5s cubic-bezier(0.4,0,0.2,1);}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.ring-big{font-family:'Syne',sans-serif;font-size:2.6rem;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--blue-l),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.ring-sub{font-size:0.68rem;color:var(--muted);}
+.end-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;}
+.end-box{background:var(--surface2);border-radius:12px;padding:14px;}
+.end-box-val{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;}
+.end-box-lbl{color:var(--muted);font-size:0.74rem;margin-top:2px;}
+.v-tech .end-box-val{color:var(--blue-l);}
+.v-comm .end-box-val{color:var(--cyan);}
+.v-conf .end-box-val{color:var(--yellow);}
+.end-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.ai-summary-box{background:rgba(86, 78, 236, 0.05);border:1px solid rgba(79,70,229,0.15);border-radius:14px;padding:20px;margin:20px 0;text-align:left;}
+.ai-summary-box h4{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--blue);margin-bottom:10px;}
+.ai-summary-box p{font-size:0.87rem;color:var(--muted);line-height:1.7;}
+.action-plan{margin-top:14px;}
+.action-plan h4{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:8px;}
+.action-item{display:flex;gap:8px;font-size:0.83rem;color:var(--text);padding:7px 0;border-bottom:1px solid var(--border);line-height:1.5;}
+.action-item:last-child{border-bottom:none;}
+.action-num{font-family:'Syne',sans-serif;font-weight:800;color:var(--blue);flex-shrink:0;font-size:0.9rem;}
+.verdict-pill{display:inline-flex;align-items:center;padding:6px 18px;border-radius:100px;font-weight:700;font-size:0.88rem;margin-bottom:16px;}
+.v-Excellent{background:rgba(22,163,74,0.12);border:1px solid rgba(22,163,74,0.3);color:#15803d;}
+.v-Good{background:rgba(79,70,229,0.1);border:1px solid rgba(79,70,229,0.25);color:var(--blue);}
+.v-Developing{background:rgba(217,119,6,0.12);border:1px solid rgba(217,119,6,0.3);color:var(--yellow);}
+.v-NeedsWork{background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.25);color:var(--red);}
+
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center;}
+.modal-bg.on{display:flex;}
+.modal{background:#fff;border:1px solid var(--border);box-shadow:0 20px 50px rgba(0,0,0,0.15);border-radius:18px;padding:32px;max-width:390px;width:90%;text-align:center;}
+.modal h3{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:6px;}
+.modal p{color:var(--muted);margin-bottom:5px;font-size:0.88rem;}
+.modal-btns{display:flex;gap:10px;justify-content:center;margin-top:18px;}
+.sc-fill-hidden{opacity:0;}
+.sc-val-hidden{color:var(--muted)!important;font-weight:400!important;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.12);border-radius:2px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo" style="display:flex;align-items:center;gap:9px;text-decoration:none;">
+    <div style="width:32px;height:32px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="11" rx="4"/><path d="M5 14c0 3.866 3.134 7 7 7s7-3.134 7-7"/><line x1="12" y1="21" x2="12" y2="24"/></svg>
+    </div>
+    <div style="line-height:1.1;">
+      <span style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--text);display:block;">SwaKrut</span>
+      <span style="font-size:0.6rem;color:var(--muted);font-weight:500;letter-spacing:0.04em;display:block;">Crafting the Professional in You</span>
+    </div>
+  </a>
+  <div class="nav-r">
+    <div class="live-pill" id="live-pill"><div class="live-dot"></div>LIVE</div>
+    <span id="nav-timer">00:00</span>
+    <button class="btn btn-danger" id="end-btn" style="display:none" onclick="confirmEnd()">End Session</button>
+    <a href="history.html" class="btn btn-ghost">History</a>
+    <a href="index.html" class="btn btn-ghost">Home</a>
+  </div>
+</nav>
+
+<!-- SETUP -->
+<div id="setup-screen">
+  <div class="setup-card">
+    <h2>🎙️ Setup Your Interview</h2>
+    <p>Fill in your details. AI generates personalised questions for your role and resume.</p>
+
+    <div class="fg">
+      <label>Your Name (optional)</label>
+      <input type="text" id="inp-name" placeholder="e.g. Rahul Sharma"/>
+    </div>
+    <div class="fg">
+      <label>Target Job Role <span style="color:var(--red)">*</span></label>
+      <select id="inp-role">
+        <option value="">— Select a role —</option>
+        <option>Software Engineer</option><option>Data Scientist</option>
+        <option>Product Manager</option><option>Frontend Developer</option>
+        <option>Backend Developer</option><option>Full Stack Developer</option>
+        <option>Machine Learning Engineer</option><option>DevOps Engineer</option>
+        <option>Business Analyst</option><option>UX Designer</option>
+      </select>
+      <div class="ferr" id="role-err">Please select a job role to continue.</div>
+    </div>
+    <div class="fg">
+      <label>Experience Level</label>
+      <select id="inp-level">
+        <option>Fresher (0-1 years)</option>
+        <option>Junior (1-3 years)</option>
+        <option selected>Mid-level (3-6 years)</option>
+        <option>Senior (6+ years)</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Upload Resume (PDF or TXT — Optional but recommended)</label>
+      <div class="upload-box" id="upload-box" onclick="document.getElementById('file-input').click()">
+        <div class="uico">📄</div>
+        <p><strong>Click to upload</strong> or drag &amp; drop &nbsp;·&nbsp; PDF or TXT</p>
+      </div>
+      <input type="file" id="file-input" accept=".txt,.pdf"/>
+      <div class="file-ok" id="file-ok"></div>
+      <div class="resume-parsed" id="resume-parsed"></div>
+    </div>
+    <div class="fg">
+      <label>Or Paste Resume / Skills (optional)</label>
+      <textarea id="inp-resume" placeholder="Paste resume text or key skills e.g: React, Node.js, Python, AWS, 3 years at TCS...&#10;AI will ask questions tailored to YOUR experience."></textarea>
+    </div>
+    <div class="fg">
+      <label>Number of Questions</label>
+      <select id="inp-qcount">
+        <option value="5">5 Questions (~10 min)</option>
+        <option value="8" selected>8 Questions (~15 min)</option>
+        <option value="12">12 Questions (~25 min)</option>
+      </select>
+    </div>
+    <div class="generating-qs" id="generating-qs">🤖 AI is generating personalised questions… please wait</div>
+    <button class="btn btn-primary start-btn" id="start-btn" onclick="goStart()">🚀 Start Interview Session</button>
+  </div>
+</div>
+
+<!-- INTERVIEW SCREEN -->
+<div id="interview-screen">
+  <div class="iv-wrap">
+
+    <!-- COL 1: Scores -->
+    <div class="iv-right">
+      <div class="rp-hdr"><h3>Live Performance</h3><p>Updates after each answer</p></div>
+      <div class="rp-body" id="rp-body">
+        <div class="rp-overall">
+          <div class="rp-score" id="rp-overall">—</div>
+          <div class="rp-score-lbl">Overall Score</div>
+        </div>
+        <div class="rp-sec">
+          <div class="rp-sec-ttl">Breakdown</div>
+          <div class="sc-row"><span class="sc-name">Technical</span><div class="sc-bar"><div class="sc-fill sc-fill-hidden" id="sf-tech" style="width:0%"></div></div><span class="sc-val sc-val-hidden" id="sv-tech">—</span></div>
+          <div class="sc-row"><span class="sc-name">Comms</span><div class="sc-bar"><div class="sc-fill sc-fill-hidden" id="sf-comm" style="width:0%"></div></div><span class="sc-val sc-val-hidden" id="sv-comm">—</span></div>
+          <div class="sc-row"><span class="sc-name">Confidence</span><div class="sc-bar"><div class="sc-fill sc-fill-hidden" id="sf-conf" style="width:0%"></div></div><span class="sc-val sc-val-hidden" id="sv-conf">—</span></div>
+          <div class="sc-row"><span class="sc-name">Eye Contact</span><div class="sc-bar"><div class="sc-fill sc-fill-hidden" id="sf-eye" style="width:0%"></div></div><span class="sc-val sc-val-hidden" id="sv-eye">—</span></div>
+          <div class="sc-row"><span class="sc-name">Posture</span><div class="sc-bar"><div class="sc-fill sc-fill-hidden" id="sf-post" style="width:0%"></div></div><span class="sc-val sc-val-hidden" id="sv-post">—</span></div>
+        </div>
+        <div class="tips-box" id="tips-box">
+          <div class="rp-sec-ttl">💡 Tips</div>
+          <div class="tip-row"><div class="tip-dot"></div><span>Use STAR: Situation, Task, Action, Result.</span></div>
+          <div class="tip-row"><div class="tip-dot"></div><span>Look at the camera lens, not the screen.</span></div>
+          <div class="tip-row"><div class="tip-dot"></div><span>Avoid "um", "uh", "like" — pause instead.</span></div>
+        </div>
+        <div class="prog-box">
+          <div class="rp-sec-ttl">Progress</div>
+          <div id="prog-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COL 2: Question + Answer + Mic -->
+    <div class="iv-center">
+      <div class="q-prog-row">
+        <div class="q-prog-track"><div class="q-prog-fill" id="q-prog-fill" style="width:0%"></div></div>
+        <div class="q-prog-lbl" id="q-num">Q 1 of 8</div>
+      </div>
+      <div class="q-card">
+        <div class="q-hdr">
+          <div class="q-badge"><div class="q-badge-dot"></div>🤖 AI Interviewer</div>
+          <div class="speaking-badge" id="speaking-badge">
+            <div class="speak-wave"><span></span><span></span><span></span></div>
+            Reading question…
+          </div>
+          <div class="rec-ind2" id="rec-ind2"><div class="rec-dot"></div>Recording</div>
+        </div>
+        <div id="q-text">Loading your interview...</div>
+        <div class="q-btns">
+          <button class="btn btn-cyan" id="rephrase-btn" onclick="rephraseQ()">🔄 Rephrase</button>
+          <button class="btn btn-ghost" id="repeat-btn" onclick="repeatQuestion()">🔁 Repeat</button>
+          <button class="btn btn-ghost" onclick="skipQ()">⏭ Skip</button>
+          <button class="btn btn-primary" onclick="nextQ()">Next Question →</button>
+        </div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-hdr">
+          <div class="ans-lbl">📝 Your Answer (transcript)</div>
+        </div>
+        <div id="ans-text">Listen to the question, then tap the 🎙️ mic button to answer.</div>
+      </div>
+      <div class="mic-zone">
+        <button class="mic-btn" id="mic-btn" onclick="toggleMic()">🎙️</button>
+        <div class="mic-meta">
+          <div class="mic-status" id="mic-status">Tap to speak</div>
+          <div class="rec-ind" id="rec-ind"><div class="rec-dot"></div>Recording live</div>
+          <div class="mic-tip">Wait for question to finish, then tap mic to answer</div>
+        </div>
+        <button class="btn btn-ghost mic-clear" onclick="clearAns()">🗑</button>
+      </div>
+      <div class="hint-bar" id="ctrl-hint">
+        🎙️ Tap mic → speak your answer → tap again to stop → click <strong>Next Question</strong>
+      </div>
+    </div>
+
+    <!-- COL 3: Camera + Metrics -->
+    <div class="iv-left">
+      <div class="cam-box">
+        <video id="webcam" autoplay muted playsinline></video>
+        <div class="cam-ph" id="cam-ph">
+          <div class="ico">🎥</div>
+          <p>Camera not available<br/>Interview still works!</p>
+        </div>
+        <div class="cam-tags">
+          <div class="ctag tag-emo" id="tag-emo">😐 Neutral</div>
+          <div class="ctag tag-post" id="tag-post">🧍 Good Posture</div>
+        </div>
+      </div>
+      <div class="met-grid">
+        <div class="met"><div class="met-val" id="m-conf" style="color:var(--blue-l)">—</div><div class="met-lbl">Confidence</div></div>
+        <div class="met"><div class="met-val" id="m-eye" style="color:var(--cyan)">—</div><div class="met-lbl">Eye Contact</div></div>
+        <div class="met"><div class="met-val" id="m-pace" style="color:var(--yellow)">—</div><div class="met-lbl">Pace wpm</div></div>
+        <div class="met"><div class="met-val" id="m-flu" style="color:var(--green)">—</div><div class="met-lbl">Fluency</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- END SCREEN -->
+<div id="end-screen">
+  <div class="end-card">
+    <h2 id="end-heading">Session Complete</h2>
+    <p id="end-sub"></p>
+
+    <div id="end-no-answer-msg" style="display:none;margin:20px 0;">
+      <div style="font-size:2.5rem;margin-bottom:10px;">🎙️</div>
+      <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:12px;padding:18px;color:var(--yellow);font-size:0.88rem;line-height:1.8;text-align:left;">
+        <strong style="display:block;margin-bottom:8px;">How to complete an interview:</strong>
+        1. The AI reads the question aloud<br/>
+        2. Tap the 🎙️ mic button to start recording<br/>
+        3. Speak your answer clearly<br/>
+        4. Click <strong>Next Question →</strong> to move forward<br/>
+        5. Your score updates after each answer
+      </div>
+    </div>
+
+    <div id="end-score-section" style="display:none">
+      <div id="verdict-display" style="margin-bottom:16px;"></div>
+      <div class="ring-wrap">
+        <svg id="ring-svg" viewBox="0 0 130 130">
+          <defs>
+            <linearGradient id="rgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#2563eb"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+          <circle class="ring-track" cx="65" cy="65" r="55"/>
+          <circle class="ring-fill-el" id="ring-fill-el" cx="65" cy="65" r="55"/>
+        </svg>
+        <div class="ring-center">
+          <div class="ring-big" id="ring-num">0</div>
+          <div class="ring-sub">/ 100</div>
+        </div>
+      </div>
+
+      <div class="end-grid">
+        <div class="end-box v-tech"><div class="end-box-val" id="end-tech">0</div><div class="end-box-lbl">Technical</div></div>
+        <div class="end-box v-comm"><div class="end-box-val" id="end-comm">0</div><div class="end-box-lbl">Communication</div></div>
+        <div class="end-box v-conf"><div class="end-box-val" id="end-conf">0</div><div class="end-box-lbl">Confidence</div></div>
+      </div>
+
+      <div class="ai-summary-box" id="ai-summary-box" style="display:none">
+        <h4>🤖 AI Interview Coach Analysis</h4>
+        <p id="ai-summary-text" style="margin-bottom:10px;"></p>
+        <div class="action-plan">
+          <h4>Your Action Plan</h4>
+          <div id="action-plan-list"></div>
+        </div>
+      </div>
+      <div id="ai-loading" style="padding:20px;color:var(--muted);font-size:0.85rem;text-align:center;display:none;">🤖 AI is analysing your full session…</div>
+    </div>
+
+    <div class="end-btns" style="margin-top:20px">
+      <button class="btn btn-primary" onclick="window.location.href='feedback.html'">📊 Full Report</button>
+      <button class="btn btn-ghost" onclick="window.location.reload()">🔄 Try Again</button>
+      <a href="history.html" class="btn btn-ghost">📋 History</a>
+      <a href="index.html" class="btn btn-ghost">Home</a>
+    </div>
+  </div>
+</div>
+
+<div class="modal-bg" id="end-modal">
+  <div class="modal">
+    <h3>End Interview?</h3>
+    <p>You have answered <strong id="modal-count">0</strong> question(s).</p>
+    <p id="modal-note" style="font-size:0.8rem;color:var(--muted)">Your progress will be saved.</p>
+    <div class="modal-btns">
+      <button class="btn btn-ghost" onclick="closeModal()">Keep Going</button>
+      <button class="btn btn-danger" onclick="doEnd()">End &amp; See Results</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var S = {
+  name:'', role:'', level:'', resume:'', resumeParsed:null,
+  questions:[], idx:0, total:8,
+  answers:[], qScores:[],
+  transcript:'', rephrases:0,
+  recording:false, recognition:null,
+  timerRef:null, secs:0,
+  finalScores:null, liveRef:null,
+  evaluating:false, ttsActive:false
+};
+
+// ── FALLBACK QUESTION BANKS ──────────────────────────────────
+// ── LEVEL-AWARE FALLBACK QUESTION BANKS ──────────────────────
+var LEVEL_BANKS = {
+  fresher: {
+    'Software Engineer':['What is the difference between an array and a linked list?','Explain Object-Oriented Programming in simple terms with an example.','What is the difference between a stack and a queue?','What is version control (Git) and why is it important?','What is the difference between HTTP and HTTPS?','What makes code readable and maintainable?','Tell me about a personal or college project you built.','Which programming languages are you comfortable with and why?','How do you approach debugging when your code does not work?','What is a function and what is a class?','What is the difference between a compiler and an interpreter?'],
+    'Data Scientist':['What is the difference between supervised and unsupervised learning?','What are training and test sets and why do we split data?','What is overfitting and how do you detect it?','Explain mean, median and mode and when to use each.','Which Python libraries have you used for data work?','Why is data cleaning important?','What is a confusion matrix?','Describe a data project from your studies.'],
+    'Machine Learning Engineer':['What is the difference between a model and an algorithm?','Explain what training a model means in simple terms.','What libraries have you used for ML in Python?','What is gradient descent?','Describe a model you built during your studies.','What is the difference between classification and regression?'],
+    'Product Manager':['What does a Product Manager do?','How would you gather user feedback for a new app?','How would you decide which features to build first?','Describe a product you use daily and one thing you would improve.'],
+    'UX Designer':['Walk me through your design process.','What tools do you use for design and prototyping?','How do you approach user research with limited time?','Describe a project where you improved a user experience.'],
+    generic:['What are your strongest technical skills?','Describe a college or personal project you are proud of.','How do you tackle a task you have never done before?','What does good teamwork look like to you?','Where do you want to be professionally in 2 years?','How do you manage your time when juggling multiple tasks?','What motivates you to keep learning?','Describe a mistake you made and what you learned from it.','Why did you choose this field?','How do you handle pressure or tight deadlines?']
+  },
+  junior: {
+    'Software Engineer':['Walk me through a feature you built end-to-end.','How do you write and structure unit tests?','What is the difference between SQL and NoSQL?','What makes a REST API well-designed?','How do you resolve merge conflicts in Git?','What is the difference between authentication and authorization?','How would you debug a slow-loading web page?','Describe a bug you fixed in production — what was your process?','What is Big O notation? Give a practical example.','How do you keep your technical skills up to date?','Describe a time you received critical feedback and how you handled it.'],
+    'Data Scientist':['Walk me through a model you built and what business problem it solved.','How do you handle missing data in a dataset?','What is the difference between precision and recall?','How do you validate a machine learning model?','What is feature engineering? Give an example from your work.','How do you communicate model results to non-technical stakeholders?'],
+    'Machine Learning Engineer':['How have you deployed a model to production?','What tools do you use for model training and experiment tracking?','How do you handle imbalanced datasets?','What is the difference between batch and online learning?','Describe an ML pipeline you built.'],
+    'Product Manager':['Describe a product improvement you drove based on user feedback.','How do you write a clear user story?','How do you define and measure success for a feature?','Describe a trade-off decision you made in a project.'],
+    generic:['Describe a challenging project and how you solved a key obstacle.','How do you handle multiple competing deadlines?','Tell me about a time you disagreed with a team decision and what you did.','What technical skill have you improved the most recently?','How do you give and receive constructive feedback?','Describe a time you had to learn something quickly under pressure.','Where do you see yourself in 3 years?']
+  },
+  mid: {
+    'Software Engineer':['How would you design a system to handle 10 million requests per day?','Describe your approach to refactoring a large legacy codebase.','How do you drive code quality standards across a whole team?','Explain the CAP theorem and when it has influenced a decision you made.','Walk me through a database schema you designed and the reasoning behind it.','Describe a scalable system you architected from scratch.','How do you handle incidents in production? Walk me through your process.','How do you mentor junior engineers effectively?','Describe a time you chose to take on technical debt — was it the right call?','How do you decide whether to build something in-house or use a third-party service?'],
+    'Data Scientist':['Describe a model with measurable business impact you delivered.','How do you detect and respond to model drift in production?','Walk me through your A/B testing approach for a new ML feature.','How do you handle severe class imbalance in classification problems?','Describe your MLOps workflow from training to deployment.','How do you collaborate with product and engineering on AI features?'],
+    'Machine Learning Engineer':['How do you take an ML model from research to production reliably?','Describe your CI/CD setup for ML systems.','How do you monitor model performance after deployment?','Walk me through how you approach hyperparameter optimization at scale.','Describe a time a model performed well in training but poorly in production.'],
+    'Product Manager':['How do you align engineering, design and business on a product roadmap?','Describe a product you owned end-to-end. What was your process?','How do you handle competing stakeholder priorities?','Describe a feature that did not perform as expected — what did you learn?'],
+    generic:['Describe a time you influenced a technical decision across teams.','How do you manage technical debt while still shipping features?','Tell me about a time you led without formal authority.','How do you approach cross-functional communication on complex projects?','Describe a time a project went off-track and how you recovered it.','Where do you see yourself in 5 years?']
+  },
+  senior: {
+    'Software Engineer':['Walk me through the most complex system you have architected.','How do you define and maintain engineering standards across multiple teams?','How do you approach technology evaluation and adoption at an org level?','How have you handled a team that consistently missed delivery commitments?','How do you balance engineering innovation with system reliability?','Tell me about a high-stakes technical call you made with incomplete information.','What have you done to shape engineering culture at your organisation?','Describe a major architecture decision you reversed — what did you learn?','How do you evaluate and retain strong technical talent?','How do you influence company strategy from an engineering perspective?'],
+    'Data Scientist':['How have you built a data science practice or team from scratch?','Describe a time leadership rejected your model recommendation — how did you respond?','How do you build long-term trust with business stakeholders around AI?','What is your approach to ethical AI and bias detection in production?','How do you set and drive the technical roadmap for a data science team?'],
+    'Machine Learning Engineer':['How do you build an end-to-end ML platform for an organisation?','Describe your approach to responsible AI and model governance.','How do you evaluate build vs buy for ML infrastructure?','Describe a time an ML system caused an unintended business impact.'],
+    'Product Manager':['How do you set a 3-year product vision and get organisational buy-in?','Describe how you have built a high-performing product team.','How do you influence company strategy from a product perspective?','Describe a time you decided to kill a product or feature — how did you make that call?'],
+    generic:['Walk me through your leadership philosophy and how it has evolved.','Describe the most difficult people decision you have made.','How do you build high-trust, high-performance teams?','Tell me about a time you changed the strategic direction of a team or product.','How do you balance technical leadership with people management?','How have you actively shaped organisational culture?','What legacy do you want to leave at the organisations you join?']
+  }
+};
+
+function normLevel(level) {
+  var l = (level||'').toLowerCase();
+  if(/fresh|0.1|intern|entry/.test(l)) return 'fresher';
+  if(/junior|1.3|1.2/.test(l)) return 'junior';
+  if(/senior|5\+|6\+|7\+|lead|staff|principal/.test(l)) return 'senior';
+  return 'mid';
+}
+
+function makeFallbackQuestions(role, level, count) {
+  var lk   = normLevel(level);
+  var bank  = LEVEL_BANKS[lk] || LEVEL_BANKS.mid;
+  var roleQ = bank[role] || bank['Software Engineer'] || [];
+  var genQ  = bank.generic || [];
+  var openerMap = {
+    fresher: 'Tell me about yourself and what inspired you to pursue a career as a '+role+'.',
+    junior:  'Tell me about yourself and your professional experience so far as a '+role+'.',
+    mid:     'Tell me about yourself and the most impactful project you have led as a '+role+'.',
+    senior:  'Walk me through your career journey and what has defined your growth as a '+role+'.'
+  };
+  var opener = openerMap[lk] || openerMap.mid;
+  var pool = roleQ.concat(genQ).sort(function(){return Math.random()-0.5;});
+  return [opener].concat(pool).slice(0, count);
+}
+
+
+
+// ── FILE UPLOAD (PDF + TXT) ────────────────────────────────
+document.getElementById('file-input').addEventListener('change', function() {
+  var file = this.files[0];
+  if (!file) return;
+  var ok = document.getElementById('file-ok');
+  ok.textContent = '⏳ Reading ' + file.name + '…';
+  ok.style.display = 'block';
+  ok.style.color = 'var(--muted)';
+
+  if (file.type === 'application/pdf' || file.name.endsWith('.pdf')) {
+    // Send PDF to server for parsing
+    var fd = new FormData();
+    fd.append('resume', file);
+    fetch('/api/parse-resume', { method: 'POST', body: fd })
+      .then(function(r){ return r.json(); })
+      .then(function(json){
+        var parsed = json.parsed || {};
+        S.resumeParsed = parsed;
+        var text = [parsed.name, parsed.experience, parsed.education, parsed.summary, (parsed.skills||[]).join(', '), (parsed.companies||[]).join(', ')].filter(Boolean).join('\n');
+        var cur = document.getElementById('inp-resume').value.trim();
+        document.getElementById('inp-resume').value = cur ? cur : text;
+        ok.textContent = '✓ PDF parsed: ' + file.name;
+        ok.style.color = 'var(--green)';
+        if (parsed.name || parsed.skills?.length) {
+          var pr = document.getElementById('resume-parsed');
+          pr.style.display = 'block';
+          pr.innerHTML = '📋 Detected: ' + [parsed.name, parsed.experience, (parsed.skills||[]).slice(0,5).join(', ')].filter(Boolean).join(' · ');
+        }
+      })
+      .catch(function(){
+        ok.textContent = '⚠️ PDF parse failed — paste resume text below instead';
+        ok.style.color = 'var(--yellow)';
+      });
+  } else {
+    // Plain text
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var cur = document.getElementById('inp-resume').value.trim();
+      document.getElementById('inp-resume').value = cur ? cur + '\n\n' + e.target.result : e.target.result;
+      ok.textContent = '✓ ' + file.name + ' loaded';
+      ok.style.color = 'var(--green)';
+    };
+    reader.readAsText(file);
+  }
+});
+
+var ub = document.getElementById('upload-box');
+ub.addEventListener('dragover', function(e){ e.preventDefault(); ub.classList.add('drag'); });
+ub.addEventListener('dragleave', function(){ ub.classList.remove('drag'); });
+ub.addEventListener('drop', function(e){
+  e.preventDefault(); ub.classList.remove('drag');
+  var f = e.dataTransfer.files[0];
+  if (f) { var dt = new DataTransfer(); dt.items.add(f); document.getElementById('file-input').files = dt.files; document.getElementById('file-input').dispatchEvent(new Event('change')); }
+});
+
+document.getElementById('inp-role').addEventListener('change', function(){
+  if (this.value) { document.getElementById('role-err').style.display='none'; }
+});
+
+// ── START ────────────────────────────────────────────────────
+async function goStart() {
+  var roleEl = document.getElementById('inp-role');
+  var role   = roleEl.value;
+  if (!role) {
+    document.getElementById('role-err').style.display = 'block';
+    roleEl.focus(); return;
+  }
+  S.name    = document.getElementById('inp-name').value.trim() || 'Candidate';
+  S.role    = role;
+  S.level   = document.getElementById('inp-level').value;
+  S.resume  = document.getElementById('inp-resume').value.trim();
+  S.total   = parseInt(document.getElementById('inp-qcount').value) || 8;
+  S.idx = 0; S.answers = []; S.qScores = []; S.qStatus = {};
+  S.finalScores = null; S.transcript = ''; S.rephrases = 0;
+
+  var startBtn = document.getElementById('start-btn');
+  var genEl    = document.getElementById('generating-qs');
+  startBtn.disabled = true;
+  startBtn.textContent = '⏳ Generating questions…';
+  genEl.style.display = 'block';
+
+  // Try AI-generated questions first
+  try {
+    var res  = await fetch('/api/generate-questions', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ role:S.role, level:S.level, resume:S.resume, count:S.total })
+    });
+    var data = await res.json();
+    if (data.questions && data.questions.length >= 3) {
+      S.questions = data.questions;
+    } else { throw new Error('fallback'); }
+  } catch(e) {
+    // Fallback to local banks
+    S.questions = makeFallbackQuestions(role, S.level, S.total);
+  }
+
+  genEl.style.display = 'none';
+  startBtn.disabled = false;
+  startBtn.textContent = '🚀 Start Interview Session';
+
+  buildProg();
+  document.getElementById('setup-screen').style.display    = 'none';
+  document.getElementById('interview-screen').style.display = 'block';
+  document.getElementById('live-pill').style.display       = 'flex';
+  document.getElementById('nav-timer').style.display       = 'block';
+  document.getElementById('end-btn').style.display         = 'block';
+
+  startTimer(); startCam(); startSim(); showQ();
+}
+
+// ── TTS ──────────────────────────────────────────────────────
+var _ttsVoices = [];
+if (window.speechSynthesis) {
+  _ttsVoices = window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged = function(){ _ttsVoices = window.speechSynthesis.getVoices(); };
+}
+
+function speakText(text, onEnd) {
+  if (!window.speechSynthesis) { if (onEnd) onEnd(); return; }
+  try {
+    window.speechSynthesis.cancel();
+    S.ttsActive = true;
+    document.getElementById('speaking-badge').classList.add('on');
+    var utter = new SpeechSynthesisUtterance(text);
+    utter.rate = 0.9; utter.pitch = 1.0; utter.volume = 1.0;
+    var voices = window.speechSynthesis.getVoices();
+    var preferred = voices.find(function(v){ return /google us english|samantha|karen|daniel|alex/i.test(v.name); })
+      || voices.find(function(v){ return v.lang === 'en-US' && !v.localService; })
+      || voices.find(function(v){ return v.lang === 'en-US'; })
+      || voices[0];
+    if (preferred) utter.voice = preferred;
+    utter.onend = function() {
+      S.ttsActive = false;
+      document.getElementById('speaking-badge').classList.remove('on');
+      if (onEnd) onEnd();
+    };
+    utter.onerror = function() {
+      S.ttsActive = false;
+      document.getElementById('speaking-badge').classList.remove('on');
+      if (onEnd) onEnd();
+    };
+    window.speechSynthesis.speak(utter);
+  } catch(e) { S.ttsActive = false; document.getElementById('speaking-badge').classList.remove('on'); if (onEnd) onEnd(); }
+}
+
+function repeatQuestion() {
+  speakText('Question ' + (S.idx + 1) + '. ' + S.questions[S.idx]);
+}
+
+// ── SHOW QUESTION ─────────────────────────────────────────────
+function showQ() {
+  if (S.idx >= S.questions.length) { doEnd(); return; }
+  var el = document.getElementById('q-text');
+  el.style.opacity = '0';
+  var question = S.questions[S.idx];
+  setTimeout(function(){
+    el.textContent = question;
+    el.style.transition = 'opacity 0.3s'; el.style.opacity = '1';
+    speakText('Question ' + (S.idx + 1) + '. ' + question);
+  }, 150);
+  document.getElementById('q-num').textContent = 'Q ' + (S.idx+1) + ' of ' + S.total;
+  var pf = document.getElementById('q-prog-fill');
+  if (pf) pf.style.width = Math.round((S.idx / S.total) * 100) + '%';
+  document.getElementById('ans-text').textContent = 'Listening to question… then tap 🎙️ mic to answer.';
+  document.getElementById('ans-text').classList.remove('has-text');
+  S.transcript = ''; S.rephrases = 0;
+  updateProg();
+}
+
+// ── REPHRASE ────────────────────────────────────────────────
+var REPHRASE_INTROS = ['Let me rephrase that — ','Here is another angle — ','To put it differently — ','In other words — '];
+function rephraseQ() {
+  S.rephrases++;
+  var orig = S.questions[S.idx];
+  var intro = REPHRASE_INTROS[(S.rephrases-1) % REPHRASE_INTROS.length];
+  var fns = [
+    function(q){ return q.replace(/^(Can you |Tell me |Describe |How do you |Walk me through )/,'In your own words, '); },
+    function(q){ return 'Give me a specific example — ' + q.charAt(0).toLowerCase() + q.slice(1); },
+    function(q){ return 'From a different angle — ' + q.charAt(0).toLowerCase() + q.slice(1); },
+  ];
+  var txt = intro + (function(){ try{ return fns[(S.rephrases-1)%fns.length](orig); }catch(e){ return orig; } })();
+  var el = document.getElementById('q-text');
+  el.style.opacity='0';
+  setTimeout(function(){
+    el.textContent = txt; el.style.opacity='1';
+    speakText(txt);
+  }, 100);
+  var btn = document.getElementById('rephrase-btn');
+  btn.textContent='✓ Rephrased!';
+  setTimeout(function(){ btn.textContent='🔄 Rephrase'; }, 1400);
+}
+
+// ── WEB SPEECH ───────────────────────────────────────────────
+function startWebSpeech() {
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) {
+    document.getElementById('ans-text').textContent = '⚠️ Speech recognition not supported. Use Chrome or Edge.';
+    setMicUI(false); S.recording = false; return;
+  }
+  var recognition = new SR();
+  recognition.lang = 'en-US';
+  recognition.continuous = true;
+  recognition.interimResults = true;
+  recognition.maxAlternatives = 1;
+  S.recognition = recognition;
+  var finalTranscript = S.transcript || '';
+  recognition.onstart = function() {
+    setMicUI(true);
+    var el = document.getElementById('ans-text');
+    el.textContent = finalTranscript || '🎙️ Listening… speak your answer clearly.';
+    el.classList.remove('has-text');
+  };
+  recognition.onresult = function(e) {
+    var interim = '';
+    for (var i = e.resultIndex; i < e.results.length; i++) {
+      var t = e.results[i][0].transcript;
+      if (e.results[i].isFinal) finalTranscript += t + ' ';
+      else interim += t;
+    }
+    var display = (finalTranscript + interim).trim();
+    var el = document.getElementById('ans-text');
+    el.textContent = display || '🎙️ Listening…';
+    if (finalTranscript.trim()) el.classList.add('has-text');
+  };
+  recognition.onerror = function(e) {
+    if (e.error === 'not-allowed') document.getElementById('ans-text').textContent = '🚫 Microphone access denied. Allow mic and try again.';
+    else if (e.error !== 'aborted') document.getElementById('ans-text').textContent = '⚠️ Error: ' + e.error + '. Try again.';
+    setMicUI(false); S.recording = false;
+  };
+  recognition.onend = function() {
+    var el = document.getElementById('ans-text');
+    if (finalTranscript.trim()) {
+      S.transcript = finalTranscript.trim();
+      el.textContent = S.transcript; el.classList.add('has-text');
+    } else {
+      el.textContent = 'Nothing captured. Tap mic and speak again.';
+      el.classList.remove('has-text');
+    }
+    setMicUI(false); S.recording = false;
+  };
+  try { recognition.start(); } catch(e) {
+    document.getElementById('ans-text').textContent = '⚠️ Could not start mic. Try again.';
+    setMicUI(false); S.recording = false;
+  }
+}
+function stopWebSpeech() {
+  if (S.recognition) { try{ S.recognition.stop(); }catch(e){} S.recognition = null; }
+}
+function setMicUI(rec) {
+  var btn=document.getElementById('mic-btn'), ri=document.getElementById('rec-ind'), ri2=document.getElementById('rec-ind2'), lbl=document.getElementById('mic-status');
+  if(rec){
+    btn.classList.add('rec'); btn.textContent='⏹';
+    if(ri) ri.classList.add('on'); if(ri2) ri2.classList.add('on');
+    if(lbl){ lbl.textContent='Stop & save'; lbl.classList.add('live'); }
+    document.getElementById('ctrl-hint').innerHTML='🔴 Recording… tap mic to stop.';
+  } else {
+    btn.classList.remove('rec'); btn.textContent='🎙️';
+    if(ri) ri.classList.remove('on'); if(ri2) ri2.classList.remove('on');
+    if(lbl){ lbl.textContent='Tap to speak'; lbl.classList.remove('live'); }
+    document.getElementById('ctrl-hint').innerHTML='🎙️ Tap mic → speak → tap to stop → <strong>Next Question</strong>';
+  }
+}
+function toggleMic() {
+  if (S.evaluating) return;
+  if (!S.recording) {
+    S.recording = true;
+    try{ window.speechSynthesis.cancel(); S.ttsActive = false; document.getElementById('speaking-badge').classList.remove('on'); }catch(e){}
+    startWebSpeech();
+  } else {
+    S.recording = false; stopWebSpeech(); setMicUI(false);
+  }
+}
+function clearAns() {
+  S.transcript = '';
+  document.getElementById('ans-text').textContent = 'Cleared. Tap mic to record again.';
+  document.getElementById('ans-text').classList.remove('has-text');
+}
+
+// ── EVALUATE ────────────────────────────────────────────────
+async function evaluateAnswer(question, answer) {
+  try {
+    var resumeCtx = S.resume ? S.resume.slice(0, 400) : (S.resumeParsed ? JSON.stringify(S.resumeParsed).slice(0, 400) : '');
+    var res = await fetch('/api/evaluate', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ question, answer, role:S.role, level:S.level, resumeContext:resumeCtx })
+    });
+    return await res.json();
+  } catch(err) {
+    return { scores:scoreHeuristic(answer), feedback:'AI evaluation unavailable.', strengths:[], improvements:[] };
+  }
+}
+function scoreHeuristic(text) {
+  var words=text.trim().split(/\s+/).filter(function(w){return w.length>1;}), wc=words.length;
+  if(wc===0) return {tech:0,comm:0,conf:0};
+  var fillers=(text.toLowerCase().match(/\b(um|uh|like|you know|basically|literally|right|so)\b/g)||[]).length;
+  var fillerRatio = fillers / Math.max(wc,1);
+  // Structure detection — STAR method keywords
+  var hasStruct=/\b(first|second|third|then|because|therefore|for example|however|additionally|situation|task|action|result|so i|as a result|finally|initially|next|after that)\b/i.test(text);
+  var hasStar=/\b(situation|task|action|result)\b/i.test(text);
+  // Technical keyword detection
+  var hasTech=/\b(api|system|data|function|class|method|algorithm|database|server|cloud|framework|deploy|test|sprint|code|software|application|development|performance|architecture|design|interface|module|component|pipeline|security|scalable|optimize|debug|implement|build|solution|feature|product)\b/i.test(text);
+  var hasExample=/\b(example|instance|specifically|when i|in my|project|built|implemented|we had|led|worked on|created|developed|managed|used|solved|fixed)\b/i.test(text);
+  var hasMetrics=/\d+\s*(%|users|requests|ms|seconds|hours|years|months|times|x faster|k |m )/i.test(text);
+
+  // Base scores — start fair, scale up with quality signals
+  var tech = 45, comm = 45, conf = 50;
+
+  // Word count scoring — proper length answers deserve credit
+  if (wc >= 150)      { tech += 22; comm += 20; conf += 15; }
+  else if (wc >= 100) { tech += 16; comm += 16; conf += 12; }
+  else if (wc >= 60)  { tech += 10; comm += 10; conf += 8; }
+  else if (wc >= 30)  { tech += 4;  comm += 4;  conf += 4; }
+  else                { tech -= 10; comm -= 10; conf -= 8; }
+
+  // Tech keywords
+  if (hasTech) tech += 14;
+  // Real examples from experience
+  if (hasExample) { tech += 8; comm += 8; }
+  // Metrics / quantified impact
+  if (hasMetrics) { tech += 8; comm += 5; }
+  // Structured answer (STAR or connective language)
+  if (hasStar)    { comm += 15; conf += 10; }
+  else if (hasStruct) { comm += 8; conf += 5; }
+
+  // Filler word penalty — only heavy filler use should penalise
+  if (fillerRatio > 0.12)      { conf -= 18; }
+  else if (fillerRatio > 0.07) { conf -= 8; }
+  else if (fillerRatio < 0.02) { conf += 8; } // very clean speech
+
+  function jit(){return Math.floor((Math.random()-0.5)*6);}
+  function cl(v){return Math.max(5,Math.min(100,Math.round(v+jit())));}
+  return{tech:cl(tech),comm:cl(comm),conf:cl(conf)};
+}
+
+// ── NEXT / SKIP ──────────────────────────────────────────────
+async function nextQ() {
+  if (S.recording) { S.recording = false; stopWebSpeech(); setMicUI(false); await new Promise(r=>setTimeout(r,400)); }
+  var transcript = S.transcript.trim();
+  var question   = S.questions[S.idx];
+
+  // Determine status before evaluating
+  var qStatus = transcript.length > 5 ? 'answered' : 'unanswered';
+  S.qStatus[S.idx] = qStatus;
+
+  S.evaluating = true;
+  var ansEl = document.getElementById('ans-text');
+  ansEl.textContent = (transcript || 'No answer.') + '\n\n⏳ AI is evaluating your answer…';
+
+  var result, score;
+  if (!transcript || transcript.length < 5) {
+    // No answer given — score 0
+    result = { scores:{tech:0,comm:0,conf:0}, feedback:'No answer was provided. Try to speak at least a few sentences.', strengths:[], improvements:['Attempt the question next time — even a partial answer scores better than silence.'] };
+    score = {tech:0,comm:0,conf:0};
+  } else {
+    result = await evaluateAnswer(question, transcript);
+    score = result.scores || {tech:50,comm:50,conf:50};
+  }
+
+  S.evaluating = false;
+  S.qScores.push(score);
+  S.answers.push({ q:question, a:transcript, score, aiFeedback:result.feedback||'', strengths:result.strengths||[], improvements:result.improvements||[], status:qStatus });
+  updateScores();
+  updateProg();
+
+  // Show live tip
+  if (result.improvements && result.improvements.length) {
+    var tb = document.getElementById('tips-box');
+    tb.innerHTML = '<div class="rp-sec-ttl">💡 AI Feedback</div>' +
+      (result.strengths||[]).map(function(s){ return '<div class="tip-row"><div class="tip-dot" style="background:var(--green)"></div><span style="color:var(--green)">✓ '+s+'</span></div>'; }).join('') +
+      (result.improvements||[]).map(function(s){ return '<div class="tip-row"><div class="tip-dot"></div><span>'+s+'</span></div>'; }).join('');
+  }
+  S.idx++;
+  if (S.idx >= S.questions.length) { doEnd(); return; }
+  showQ();
+}
+function skipQ() {
+  if (S.recording) { S.recording=false; stopWebSpeech(); setMicUI(false); }
+  S.qScores.push({tech:0,comm:0,conf:0});
+  S.answers.push({q:S.questions[S.idx],a:'',score:{tech:0,comm:0,conf:0},aiFeedback:'Skipped.',strengths:[],improvements:['Next time, attempt the question even partially — partial answers score better than skipping.'],status:'skip'});
+  S.qStatus[S.idx] = 'skip';
+  updateProg();
+  S.idx++;
+  if(S.idx>=S.questions.length){doEnd();return;}
+  showQ();
+}
+
+// ── SCORES ───────────────────────────────────────────────────
+function avg(arr){return arr.length?Math.round(arr.reduce(function(a,b){return a+b;},0)/arr.length):0;}
+function cl(v,lo,hi){return Math.max(lo,Math.min(hi,v));}
+function updateScores(){
+  if(!S.qScores.length) return;
+  var tech=avg(S.qScores.map(function(s){return s.tech;}));
+  var comm=avg(S.qScores.map(function(s){return s.comm;}));
+  var conf=avg(S.qScores.map(function(s){return s.conf;}));
+  var eye=Math.round(cl(68+Math.random()*20,0,100));
+  var post=Math.round(cl(65+Math.random()*22,0,100));
+  var interviewScore=Math.round((tech+comm+conf)/3); var presenceScore=Math.round((eye+post)/2); S.finalScores={tech,comm,conf,eye,post,overall:Math.round(interviewScore*0.70+presenceScore*0.30)};
+}
+function setBar(id,val){
+  var fill=document.getElementById('sf-'+id), lbl=document.getElementById('sv-'+id);
+  fill.classList.remove('sc-fill-hidden'); lbl.classList.remove('sc-val-hidden');
+  setTimeout(function(){fill.style.width=val+'%';},50);
+  lbl.textContent=val;
+}
+function revealScores(){
+  if(!S.finalScores) return;
+  var sc=S.finalScores;
+  setBar('tech',sc.tech);setBar('comm',sc.comm);setBar('conf',sc.conf);setBar('eye',sc.eye);setBar('post',sc.post);
+  document.getElementById('rp-overall').textContent=sc.overall;
+}
+
+// ── PROGRESS ─────────────────────────────────────────────────
+function buildProg(){
+  var html='';
+  for(var i=0;i<S.questions.length;i++){
+    html+='<div class="prog-item pend" id="pi-'+i+'"><div class="prog-num">'+(i+1)+'</div><span class="prog-txt">'+S.questions[i].substring(0,36)+'…</span></div>';
+  }
+  document.getElementById('prog-list').innerHTML=html;
+}
+function updateProg(){
+  for(var i=0;i<S.questions.length;i++){
+    var el=document.getElementById('pi-'+i);
+    if(!el) continue;
+    if(i===S.idx){
+      el.className='prog-item curr';
+    } else if(S.qStatus[i]){
+      var st=S.qStatus[i];
+      if(st==='skip') el.className='prog-item done-skip';
+      else if(st==='unanswered') el.className='prog-item done-unans';
+      else el.className='prog-item done';
+    } else if(i<S.idx){
+      el.className='prog-item done';
+    } else {
+      el.className='prog-item pend';
+    }
+  }
+}
+
+// ── CAMERA ────────────────────────────────────────────────────
+function startCam(){
+  navigator.mediaDevices.getUserMedia({video:true,audio:false}).then(function(stream){
+    var v=document.getElementById('webcam');
+    v.srcObject=stream; v.style.display='block';
+    document.getElementById('cam-ph').style.display='none';
+  }).catch(function(){});
+}
+
+// ── LIVE SIM ─────────────────────────────────────────────────
+var EMOS=['😐 Neutral','😊 Confident','🤔 Thinking','😤 Focused','🙂 Calm'];
+var POSTS=['🧍 Good Posture','✅ Great Posture','⚠️ Sit Upright','🧍 Good Posture'];
+function startSim(){
+  var t=0;
+  S.liveRef=setInterval(function(){
+    t++;
+    if(t%3===0) document.getElementById('tag-emo').textContent=EMOS[Math.floor(Math.random()*EMOS.length)];
+    if(t%2===0) document.getElementById('tag-post').textContent=POSTS[Math.floor(Math.random()*POSTS.length)];
+    document.getElementById('m-eye').textContent=Math.round(Math.max(50,Math.min(98,68+Math.random()*22)))+'%';
+    document.getElementById('m-pace').textContent=Math.round(115+Math.random()*50);
+    document.getElementById('m-flu').textContent=Math.round(Math.max(50,Math.min(98,72+Math.random()*22)))+'%';
+  },2000);
+}
+
+// ── TIMER ────────────────────────────────────────────────────
+function startTimer(){
+  S.secs=0;
+  S.timerRef=setInterval(function(){
+    S.secs++;
+    var m=String(Math.floor(S.secs/60)).padStart(2,'0');
+    var s=String(S.secs%60).padStart(2,'0');
+    document.getElementById('nav-timer').textContent=m+':'+s;
+  },1000);
+}
+
+// ── END ────────────────────────────────────────────────────
+function confirmEnd(){
+  document.getElementById('modal-count').textContent=S.idx;
+  var note=document.getElementById('modal-note');
+  if(S.idx===0){note.textContent="You haven't answered any questions yet.";note.style.color='var(--yellow)';}
+  else{note.textContent="Your progress will be saved.";note.style.color='var(--muted)';}
+  document.getElementById('end-modal').classList.add('on');
+}
+function closeModal(){ document.getElementById('end-modal').classList.remove('on'); }
+
+async function doEnd(){
+  clearInterval(S.timerRef); clearInterval(S.liveRef);
+  try{ window.speechSynthesis.cancel(); }catch(e){}
+  if(S.recording){ S.recording=false; stopWebSpeech(); setMicUI(false); }
+  closeModal();
+  var answered=S.idx;
+  var sc;
+  if(S.qScores.length>0){
+    var tech=avg(S.qScores.map(function(s){return s.tech;}));
+    var comm=avg(S.qScores.map(function(s){return s.comm;}));
+    var conf=avg(S.qScores.map(function(s){return s.conf;}));
+    var eye=Math.round(cl(68+Math.random()*20,0,100));
+    var post=Math.round(cl(65+Math.random()*22,0,100));
+    sc={tech,comm,conf,eye,post,overall:Math.round(Math.round((tech+comm+conf)/3)*0.70+Math.round((eye+post)/2)*0.30)};
+  } else {
+    sc={tech:0,comm:0,conf:0,eye:0,post:0,overall:0};
+  }
+  S.finalScores=sc; revealScores();
+
+  // Save session
+  var sessionData = {name:S.name,role:S.role,level:S.level,duration:S.secs,questionsAnswered:answered,scores:sc,answers:S.answers,date:new Date().toISOString()};
+  try{ localStorage.setItem('swakrut_session', JSON.stringify(sessionData)); }catch(e){}
+  var resultEntry={id:Date.now().toString(),timestamp:new Date().toISOString(),payload:sessionData};
+  try{
+    var hist=JSON.parse(localStorage.getItem('swa_results')||'[]');
+    if(!Array.isArray(hist)) hist=[];
+    hist.unshift(resultEntry);
+    if(hist.length>100) hist=hist.slice(0,100);
+    localStorage.setItem('swa_results',JSON.stringify(hist));
+  }catch(e){}
+  fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(sessionData)}).catch(function(){});
+
+  // Flip to end screen
+  document.getElementById('interview-screen').style.display='none';
+  document.getElementById('end-screen').style.display='flex';
+  document.getElementById('live-pill').style.display='none';
+  document.getElementById('end-btn').style.display='none';
+
+  // Heading
+  var heading,emoji;
+  if(answered===0){heading='Session Ended';emoji='📋';}
+  else if(sc.overall>=80){heading='Outstanding Performance!';emoji='🏆';}
+  else if(sc.overall>=65){heading='Good Job!';emoji='👍';}
+  else if(sc.overall>=40){heading='Keep Practising!';emoji='📈';}
+  else{heading='Room to Improve';emoji='💪';}
+  document.getElementById('end-heading').textContent=emoji+' '+heading;
+  document.getElementById('end-sub').textContent=answered===0?'No answers recorded.':`${S.name} · ${S.role} · ${answered} question${answered!==1?'s':''} answered`;
+
+  var ss=document.getElementById('end-score-section'), nam=document.getElementById('end-no-answer-msg');
+  if(answered===0){ss.style.display='none';nam.style.display='block';}
+  else {
+    ss.style.display='block'; nam.style.display='none';
+    var C=2*Math.PI*55, re=document.getElementById('ring-fill-el');
+    re.setAttribute('stroke-dasharray',C); re.setAttribute('stroke-dashoffset',C);
+    setTimeout(function(){ re.setAttribute('stroke-dashoffset',C*(1-sc.overall/100)); },200);
+    var cur=0,target=sc.overall;
+    function tick(){ cur=Math.min(cur+Math.max(1,Math.ceil(target/60)),target); document.getElementById('ring-num').textContent=cur; if(cur<target) requestAnimationFrame(tick); }
+    setTimeout(tick,300);
+    document.getElementById('end-tech').textContent=sc.tech;
+    document.getElementById('end-comm').textContent=sc.comm;
+    document.getElementById('end-conf').textContent=sc.conf;
+
+    // Get LLM final feedback
+    document.getElementById('ai-loading').style.display='block';
+    try {
+      var resumeCtx = S.resume ? S.resume.slice(0,600) : '';
+      var fbRes = await fetch('/api/final-feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({role:S.role,level:S.level,name:S.name,answers:S.answers,scores:sc,resumeContext:resumeCtx})});
+      var fbData = await fbRes.json();
+      document.getElementById('ai-loading').style.display='none';
+      var verdict = (fbData.verdict||'').replace(/\s+/g,'');
+      document.getElementById('verdict-display').innerHTML = '<div class="verdict-pill v-'+verdict+'">'+(fbData.verdict||'—')+'</div>';
+      var summaryBox=document.getElementById('ai-summary-box');
+      summaryBox.style.display='block';
+      document.getElementById('ai-summary-text').textContent=fbData.summary||'';
+      var apl=document.getElementById('action-plan-list');
+      apl.innerHTML=(fbData.actionPlan||[]).map(function(a,i){ return '<div class="action-item"><span class="action-num">'+(i+1)+'</span><span>'+a+'</span></div>'; }).join('');
+      // Update session with final feedback
+      try{
+        var saved=JSON.parse(localStorage.getItem('swakrut_session')||'{}');
+        saved.aiFinalFeedback=fbData;
+        localStorage.setItem('swakrut_session',JSON.stringify(saved));
+      }catch(e){}
+    } catch(e) {
+      document.getElementById('ai-loading').style.display='none';
+    }
+  }
+}
+</script>
+</body>
+</html>

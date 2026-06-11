@@ -1,0 +1,117 @@
+None selected 
+
+Skip to content
+Using Gmail with screen readers
+1 of 697
+SwaKrt
+Inbox
+
+Mrudula G <mrudula.gondi@gmail.com>
+Attachments
+9:19 AM (7 minutes ago)
+to me
+
+
+ 16 Attachments
+  •  Scanned by Gmail
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sign In — SwaKrut</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--blue:#4f46e5;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--surface:#fff;--bg:#f5f6fa;}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);color:var(--text);}
+    .auth-center{background:var(--surface);border-radius:20px;box-shadow:0 4px 32px rgba(79,70,229,0.10);padding:48px 44px 40px;width:100%;max-width:400px;}
+    .brand{text-align:center;margin-bottom:32px;}
+    .brand-name{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--blue);letter-spacing:-0.02em;}
+    .brand-sub{color:var(--muted);font-size:0.88rem;margin-top:4px;}
+    h2{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:4px;}
+    .sub{color:var(--muted);font-size:0.88rem;margin-bottom:24px;}
+    .sub a{color:var(--blue);text-decoration:none;font-weight:600;}
+    .fg{margin-bottom:16px;}
+    label{display:block;font-size:0.72rem;font-weight:700;margin-bottom:6px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;}
+    input{width:100%;background:#f8fafc;border:1.5px solid var(--border);border-radius:10px;padding:11px 14px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.92rem;outline:none;transition:border-color 0.2s;}
+    input:focus{border-color:var(--blue);}
+    .btn{width:100%;padding:12px;border-radius:10px;font-weight:700;font-size:0.95rem;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;transition:all 0.18s;}
+    .btn-primary{background:var(--blue);color:#fff;margin-bottom:10px;}
+    .btn-primary:hover{background:#6366f1;}
+    .btn-ghost{background:transparent;border:1.5px solid var(--border);color:var(--muted);}
+    .btn-ghost:hover{border-color:var(--blue);color:var(--blue);}
+    .divider{display:flex;align-items:center;gap:12px;margin:14px 0;color:var(--muted);font-size:0.78rem;}
+    .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border);}
+    #authMsg{margin-top:10px;font-size:0.82rem;padding:10px 14px;border-radius:8px;display:none;}
+    .msg-err{background:rgba(220,38,38,0.06);border:1px solid rgba(220,38,38,0.2);color:#dc2626;}
+    .msg-ok{background:rgba(22,163,74,0.06);border:1px solid rgba(22,163,74,0.2);color:#16a34a;}
+    @media(max-width:480px){.auth-center{padding:32px 20px;}}
+  </style>
+</head>
+<body>
+<div class="auth-center">
+  <div class="brand">
+    <div class="brand-name">SwaKrut</div>
+    <div class="brand-sub">Crafting the Professional in You</div>
+  </div>
+  <h2>Welcome back</h2>
+  <p class="sub">No account? <a href="signup.html">Sign up free</a></p>
+  <div class="fg">
+    <label for="email">Email address</label>
+    <input id="email" type="email" placeholder="you@example.com" autocomplete="email"/>
+  </div>
+  <div class="fg">
+    <label for="password">Password</label>
+    <input id="password" type="password" placeholder="Your password" autocomplete="current-password"/>
+  </div>
+  <button class="btn btn-primary" id="signinBtn">Sign in</button>
+  <div class="divider">or</div>
+  <button class="btn btn-ghost" onclick="guestLogin()">Continue as Guest</button>
+  <div id="authMsg"></div>
+</div>
+<script>
+  function showMsg(text, type) {
+    var el = document.getElementById('authMsg');
+    el.textContent = text;
+    el.className = type === 'ok' ? 'msg-ok' : 'msg-err';
+    el.style.display = 'block';
+  }
+
+  document.getElementById('signinBtn').addEventListener('click', function() {
+    var email    = document.getElementById('email').value.trim();
+    var password = document.getElementById('password').value;
+    if (!email) { showMsg('Please enter your email address.'); return; }
+    if (!password) { showMsg('Please enter your password.'); return; }
+
+    // LocalStorage-based auth (for prototype)
+    var users = JSON.parse(localStorage.getItem('swak_users') || '[]');
+    var user  = users.find(function(u){ return u.email === email && u.password === password; });
+    if (!user) {
+      // Try auto-register if no users exist yet
+      if (users.length === 0) {
+        users.push({ email, password, name: email.split('@')[0] });
+        localStorage.setItem('swak_users', JSON.stringify(users));
+        user = users[0];
+      } else {
+        showMsg('Invalid email or password. Try again or sign up.');
+        return;
+      }
+    }
+    localStorage.setItem('swak_current', JSON.stringify({ email: user.email, name: user.name || user.email.split('@')[0] }));
+    showMsg('Signed in! Redirecting…', 'ok');
+    setTimeout(function(){ window.location.href = 'index.html'; }, 700);
+  });
+
+  function guestLogin() {
+    localStorage.setItem('swak_current', JSON.stringify({ email: 'guest', name: 'Guest' }));
+    window.location.href = 'index.html';
+  }
+
+  document.getElementById('email').addEventListener('keydown', function(e){ if(e.key==='Enter') document.getElementById('password').focus(); });
+  document.getElementById('password').addEventListener('keydown', function(e){ if(e.key==='Enter') document.getElementById('signinBtn').click(); });
+</script>
+</body>
+</html>
+login.html
+Displaying interview.html.

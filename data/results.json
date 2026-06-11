@@ -1,0 +1,3597 @@
+{
+  "results": [
+    {
+      "id": "1781192804620",
+      "timestamp": "2026-06-11T15:46:44.620Z",
+      "payload": {
+        "name": "user",
+        "role": "Machine Learning Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 308,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 49,
+          "comm": 56,
+          "conf": 61,
+          "eye": 87,
+          "post": 72,
+          "overall": 63
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Machine Learning Engineer.",
+            "a": "hello my name is kanmai and I am passionate about technology programming and solving year will problems through data driven solutions I enjoy learning how intelligent system works and how they can be used to automated task improve decision making and create better experience is my interest and machine learning begin when I was introduced to the idea that computers can learn pattern from data and make predictions with outer being accessively programmed from very every situation I found it fascinating that machine learning powers applications we use everyday that has recommendation systems recognition and private action learning because it combine my interest in mathematics programming and program problem solve  building",
+            "score": {
+              "tech": 65,
+              "comm": 68,
+              "conf": 63
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Machine Learning Engineer.",
+            "a": "hello my name is kanmai and I am passionate about technology programming and solving year will problems through data driven solutions I enjoy learning how intelligent system works and how they can be used to automated task improve decision making and create better experience is my interest and machine learning begin when I was introduced to the idea that computers can learn pattern from data and make predictions with outer being accessively programmed from very every situation I found it fascinating that machine learning powers applications we use everyday that has recommendation systems recognition and private action learning because it combine my interest in mathematics programming and program problem solve  building",
+            "score": {
+              "tech": 60,
+              "comm": 63,
+              "conf": 56
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "What does good teamwork look like to you?",
+            "a": "to me agar teamwork means collaborating effectively toward a common goal while maintaining clear communication mutual respect and accountability in a team everyone bring skills and perspective send good thing work allows those student strength to compliment one another in machine learning in project the work is specially important because data scientist near my network and need to work together good team work and work sharing knowledge listening to others Idea and giving in receiving constructive feedback and having teen mens one challenge when everyone Communications",
+            "score": {
+              "tech": 31,
+              "comm": 44,
+              "conf": 63
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "How do you manage your time when working on multiple assignments?",
+            "a": "when working on multiple assignment size carby listing all the task and the deadlines I then prayer time based on urging important and the amount of effort required I break larger task in the smaller steps and create a schedule to track my process I try to complete hypot is task first while setting real estate goals for reached I also avoid progress to meet him by focusing on one task at a time and regularly review in my process this approach help me organized me deadlines and maintain quality of my work",
+            "score": {
+              "tech": 62,
+              "comm": 64,
+              "conf": 63
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "What are your hobbies outside of work or study?",
+            "a": "outside of my studies one of the biggest Hobbit is dancing I enjoyed because it help me relax express myself dancing also teach is discipline practice in confidence  with valuable skills in other areas of life as well apart from dancing I enjoy listening to music and reading in my free time this help me main then good balance between academic and person address",
+            "score": {
+              "tech": 29,
+              "comm": 39,
+              "conf": 59
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          }
+        ],
+        "date": "2026-06-11T15:46:44.608Z"
+      }
+    },
+    {
+      "id": "1781190791612",
+      "timestamp": "2026-06-11T15:13:11.612Z",
+      "payload": {
+        "name": "user",
+        "role": "Machine Learning Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 151,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 9,
+          "comm": 17,
+          "conf": 17,
+          "eye": 84,
+          "post": 72,
+          "overall": 40
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Machine Learning Engineer.",
+            "a": "hello my name is Tanmay and my technology program and solving Real world problems through data driven solutions I enjoy learning how intelligent system works and how they can be used and automated task improve decision making and create better experience",
+            "score": {
+              "tech": 27,
+              "comm": 32,
+              "conf": 29
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "How do you approach debugging when your code does not work?",
+            "a": "",
+            "score": {
+              "tech": 0,
+              "comm": 0,
+              "conf": 0
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": [
+              "Next time, attempt the question even partially — partial answers score better than skipping."
+            ],
+            "status": "skip"
+          },
+          {
+            "q": "Describe a college project you are proud of.",
+            "a": "",
+            "score": {
+              "tech": 0,
+              "comm": 0,
+              "conf": 0
+            },
+            "aiFeedback": "No answer was provided. Try to speak at least a few sentences.",
+            "strengths": [],
+            "improvements": [
+              "Attempt the question next time — even a partial answer scores better than silence."
+            ],
+            "status": "unanswered"
+          },
+          {
+            "q": "What does good teamwork look like to you?",
+            "a": "to me a good teamwork means a collaborating affectively toward a common goal while maintaining clear communication mutual respect and accountability in team everyone brings difference skills and perspectors and good team work allows that strength to complement on another",
+            "score": {
+              "tech": 14,
+              "comm": 19,
+              "conf": 23
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Describe a time you had a conflict with a teammate and how you handled it.",
+            "a": "during the college project one of my team I had a dis agreement about how to approach a particular task I preferred one method the first of a similar to impliment helmet event team mate wanted more  advanced approach instead of suggested that we discuss the person cons of both options and valuate them based on a project requirements and timeline",
+            "score": {
+              "tech": 6,
+              "comm": 36,
+              "conf": 32
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          }
+        ],
+        "date": "2026-06-11T15:13:11.606Z"
+      }
+    },
+    {
+      "id": "1781189783268",
+      "timestamp": "2026-06-11T14:56:23.268Z",
+      "payload": {
+        "name": "user",
+        "role": "Data Scientist",
+        "level": "Fresher (0-1 years)",
+        "duration": 139,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 5,
+          "comm": 13,
+          "conf": 14,
+          "eye": 83,
+          "post": 85,
+          "overall": 40
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Data Scientist.",
+            "a": "hello my name is Tanmay I am passionate about technology data and problem solving I enjoy analysing information to discover patterns in inside that can help make better decisions",
+            "score": {
+              "tech": 6,
+              "comm": 18,
+              "conf": 24
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "What does good teamwork look like to you?",
+            "a": "to make a teamwork means working together to over the common goal while respected in supporting one another",
+            "score": {
+              "tech": 8,
+              "comm": 12,
+              "conf": 19
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "What Python libraries have you used for data analysis?",
+            "a": "",
+            "score": {
+              "tech": 0,
+              "comm": 0,
+              "conf": 0
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": [
+              "Next time, attempt the question even partially — partial answers score better than skipping."
+            ],
+            "status": "skip"
+          },
+          {
+            "q": "Tell me about yourself and what drew you to this field.",
+            "a": "",
+            "score": {
+              "tech": 0,
+              "comm": 0,
+              "conf": 0
+            },
+            "aiFeedback": "No answer was provided. Try to speak at least a few sentences.",
+            "strengths": [],
+            "improvements": [
+              "Attempt the question next time — even a partial answer scores better than silence."
+            ],
+            "status": "unanswered"
+          },
+          {
+            "q": "Describe a data project you worked on in college or personally.",
+            "a": "find data project I work done in world analysing student performance data the goldest iron for factors that affect student academic result I collected and clean the data set then used Python an excel to analyse attendance student hours in exams course",
+            "score": {
+              "tech": 10,
+              "comm": 33,
+              "conf": 26
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          }
+        ],
+        "date": "2026-06-11T14:56:23.259Z"
+      }
+    },
+    {
+      "id": "1777538306502",
+      "timestamp": "2026-04-30T08:38:26.502Z",
+      "payload": {
+        "name": "user",
+        "role": "Machine Learning Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 280,
+        "questionsAnswered": 6,
+        "scores": {
+          "tech": 19,
+          "comm": 20,
+          "conf": 19,
+          "eye": 80,
+          "post": 72,
+          "overall": 42
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Machine Learning Engineer.",
+            "a": "hi I am tanmayya 2nd year text student with a strong interested machine learning and building intelligent  and building intelligent",
+            "score": {
+              "tech": 8,
+              "comm": 19,
+              "conf": 24
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Machine Learning Engineer.",
+            "a": "hi I am tanmayya 2nd year text student with a strong interested machine learning and building intelligent  and building intelligenthelp users improve  not just technical response but also their communication during interviews in this project for example I work on  when I work done building a system that generating interview questions based on the useless I also analyse the speech using people like",
+            "score": {
+              "tech": 32,
+              "comm": 23,
+              "conf": 31
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "What is the difference between HTTP and HTTPS?",
+            "a": "",
+            "score": {
+              "tech": 0,
+              "comm": 0,
+              "conf": 0
+            },
+            "aiFeedback": "No answer was provided. Try to speak at least a few sentences.",
+            "strengths": [],
+            "improvements": [
+              "Attempt the question next time — even a partial answer scores better than silence."
+            ],
+            "status": "unanswered"
+          },
+          {
+            "q": "Tell me about yourself and what drew you to this field.",
+            "a": "the main difference between http and https is the security http hypertext transfer protocol where the data is first the data sent that which is there for it is not secure because it is port of 80  where has coming to https hypertext transfer protocol section in this  data is encrypted using sslr DLS so therefore as a result",
+            "score": {
+              "tech": 9,
+              "comm": 38,
+              "conf": 29
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Can you explain what version control is and why it matters?",
+            "a": "virgin control as a system that helps tag and manage changes to code overtime first it allows multiple developers to open the same project overwriting each other store then tools like get keep a history of all notification so we can go back to the earlier versions of something dates there for it support collaboration therefore  therefore it's supports collaboration  through features like balance",
+            "score": {
+              "tech": 31,
+              "comm": 22,
+              "conf": 18
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Can you explain what version control is and why it matters?",
+            "a": "virgin control as a system that helps tag and manage changes to code overtime first it allows multiple developers to open the same project overwriting each other store then tools like get keep a history of all notification so we can go back to the earlier versions of something dates there for it support collaboration therefore  therefore it's supports collaboration  through features like balance",
+            "score": {
+              "tech": 33,
+              "comm": 17,
+              "conf": 14
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          }
+        ],
+        "date": "2026-04-30T08:38:26.491Z"
+      }
+    },
+    {
+      "id": "1777538306275",
+      "timestamp": "2026-04-30T08:38:26.275Z",
+      "payload": {
+        "name": "user",
+        "role": "Machine Learning Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 280,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 16,
+          "comm": 20,
+          "conf": 20,
+          "eye": 75,
+          "post": 81,
+          "overall": 42
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Machine Learning Engineer.",
+            "a": "hi I am tanmayya 2nd year text student with a strong interested machine learning and building intelligent  and building intelligent",
+            "score": {
+              "tech": 8,
+              "comm": 19,
+              "conf": 24
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Machine Learning Engineer.",
+            "a": "hi I am tanmayya 2nd year text student with a strong interested machine learning and building intelligent  and building intelligenthelp users improve  not just technical response but also their communication during interviews in this project for example I work on  when I work done building a system that generating interview questions based on the useless I also analyse the speech using people like",
+            "score": {
+              "tech": 32,
+              "comm": 23,
+              "conf": 31
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "What is the difference between HTTP and HTTPS?",
+            "a": "",
+            "score": {
+              "tech": 0,
+              "comm": 0,
+              "conf": 0
+            },
+            "aiFeedback": "No answer was provided. Try to speak at least a few sentences.",
+            "strengths": [],
+            "improvements": [
+              "Attempt the question next time — even a partial answer scores better than silence."
+            ],
+            "status": "unanswered"
+          },
+          {
+            "q": "Tell me about yourself and what drew you to this field.",
+            "a": "the main difference between http and https is the security http hypertext transfer protocol where the data is first the data sent that which is there for it is not secure because it is port of 80  where has coming to https hypertext transfer protocol section in this  data is encrypted using sslr DLS so therefore as a result",
+            "score": {
+              "tech": 9,
+              "comm": 38,
+              "conf": 29
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Can you explain what version control is and why it matters?",
+            "a": "virgin control as a system that helps tag and manage changes to code overtime first it allows multiple developers to open the same project overwriting each other store then tools like get keep a history of all notification so we can go back to the earlier versions of something dates there for it support collaboration therefore  therefore it's supports collaboration  through features like balance",
+            "score": {
+              "tech": 31,
+              "comm": 22,
+              "conf": 18
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          }
+        ],
+        "date": "2026-04-30T08:38:26.265Z"
+      }
+    },
+    {
+      "id": "1777537452927",
+      "timestamp": "2026-04-30T08:24:12.927Z",
+      "payload": {
+        "name": "user",
+        "role": "Machine Learning Engineer",
+        "level": "Mid-level (3-6 years)",
+        "duration": 424,
+        "questionsAnswered": 8,
+        "scores": {
+          "tech": 25,
+          "comm": 20,
+          "conf": 24,
+          "eye": 78,
+          "post": 75,
+          "overall": 44
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and the most impactful project you have led as a Machine Learning Engineer.",
+            "a": "my contact  hi I am text student with the each other  machine learning and building intelligence systems one of the most powerful project I work done is an AI based interview simulator the goal was to help us improve not just that technical responsible but also the communication and conference during interview",
+            "score": {
+              "tech": 28,
+              "comm": 23,
+              "conf": 28
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "What is your approach to incident management in production?",
+            "a": "my approach to incident management and production is to stay come prioritize impact and resolve the issue systematically first I try to quickly access this CBI 10 impact like how many uses are affected in which part of the system is down based on the time period as the issue then I focus on immediate immigration such as rolling back or recent change or applying",
+            "score": {
+              "tech": 33,
+              "comm": 23,
+              "conf": 32
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Describe a situation where you influenced a technical decision across teams.",
+            "a": "",
+            "score": {
+              "tech": 0,
+              "comm": 0,
+              "conf": 0
+            },
+            "aiFeedback": "No answer was provided. Try to speak at least a few sentences.",
+            "strengths": [],
+            "improvements": [
+              "Attempt the question next time — even a partial answer scores better than silence."
+            ],
+            "status": "unanswered"
+          },
+          {
+            "q": "How would you design a URL shortener that handles 100 million requests per day?",
+            "a": "during my AI based interview simulator project we have a situation where we need to decide how to handle data processing for speech on behaviour itongses in Jelly they were different opinion some team members wanted to process and reaching on the basket for centralisation while at the suggested handling parts of it on the front and to reduce server load  it the initiative analyse both approaches and propose the hybrid solution basic processing like speech to text using API  and more complex analysis and scoring on the back endI would read",
+            "score": {
+              "tech": 42,
+              "comm": 41,
+              "conf": 32
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Tell me about yourself and the most impactful project you have led.",
+            "a": "I am then my Airtel student and studying second year the song interested building practical Jahan per solution one of the most number full project have done is an a interior system",
+            "score": {
+              "tech": 33,
+              "comm": 13,
+              "conf": 16
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Where do you see yourself in 5 years?",
+            "a": "myself growing into  a well round and Independence offer and air I want to depend my advertising areas like back and systems and measure learning and games  Real world applications overtime I like to take on more responsibility contributing to system design meeting juniors and being someone the team can realize  on critical crisis",
+            "score": {
+              "tech": 25,
+              "comm": 18,
+              "conf": 17
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Describe your approach to refactoring a large legacy codebase.",
+            "a": "my approach would be gradual and rust control notary writing everything at 1% understand the existing functionally architecture dependency  then I identify the most critical or frequently changed models and start that before making side like to make sure there are enough test at basic regressions test  after that ifect and small steps improving naming duplication duplicate simply find logic and separating responsibility",
+            "score": {
+              "tech": 32,
+              "comm": 24,
+              "conf": 31
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "How do you manage technical debt while still shipping features?",
+            "a": "I think managing technical debit is  about balance not ignoring it and letting it block delivery first separate depth and to critical and non critical if the frequent bucks at the frequent debit Apex security performance can ability of cause of frequent and smaller issues at document them clearly and planes instead of trying to fix a meeting",
+            "score": {
+              "tech": 7,
+              "comm": 19,
+              "conf": 32
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          }
+        ],
+        "date": "2026-04-30T08:24:12.921Z"
+      }
+    },
+    {
+      "id": "1777535805187",
+      "timestamp": "2026-04-30T07:56:45.187Z",
+      "payload": {
+        "name": "user",
+        "role": "Machine Learning Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 328,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 22,
+          "comm": 26,
+          "conf": 28,
+          "eye": 69,
+          "post": 86,
+          "overall": 46
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Machine Learning Engineer.",
+            "a": "hi I am Tanmay currently or second year text student with a strong interested in Russian learning in building intelligent system I got interested in this field because I have always enjoyed problem solving but what she did he inside me the same how data and algorithms can be used to make system smarter and more adaptor",
+            "score": {
+              "tech": 28,
+              "comm": 23,
+              "conf": 24
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Describe a college project you are proud of.",
+            "a": "one project and particularly proud of is an AI based the interview simulator that I work done in the girl of the project with the help students interview on improve not just that typical analysis but also the communication and conference during interviews  the system takes a uses in but including the resume and response and generating adaptive interviews questions using a language model it also unlike speech using the web factors like and don't",
+            "score": {
+              "tech": 31,
+              "comm": 21,
+              "conf": 29
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "How do you handle a task you have never done before?",
+            "a": "when I get a task I haven done before I approach it enough structure where first I make sure clearly I understand the requirement and recit into similar smaller manageable parts then I do some quick research like going to document document for example to get a basics after that I started the symbol implementation and literate the best app turn into I try and I am comfortable",
+            "score": {
+              "tech": 13,
+              "comm": 34,
+              "conf": 30
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "What is the difference between an array and a linked list?",
+            "a": "the key difference between array andersis how the store the and I have the data supports direct indexing use usually fixed size insertion and deletion of highly cost elements and memory is not has data plus pointed to next  no direct tax",
+            "score": {
+              "tech": 9,
+              "comm": 13,
+              "conf": 32
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Explain what Object-Oriented Programming means to you.",
+            "a": "to me object oriented programming is Bay Of designing software by modelling Real world entities as objects that contain both date and behaviour in object oriented programming we organised code and to classes and objects which makes it easier to manage reuse and scale the key concept include and caption inheritance polymorphism and  and abstraction  for example  for example and caption helps in hiding internal details and protecting data andheritance code reuse polymer some letters use of common interface",
+            "score": {
+              "tech": 31,
+              "comm": 37,
+              "conf": 24
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          }
+        ],
+        "date": "2026-04-30T07:56:45.164Z"
+      }
+    },
+    {
+      "id": "1777466945046",
+      "timestamp": "2026-04-29T12:49:05.046Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 408,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 26,
+          "comm": 24,
+          "conf": 28,
+          "eye": 71,
+          "post": 85,
+          "overall": 47
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "so hi I am Tanmay currently or second year text student with a strong interested building practical real well solutions using software I got interested in software engineering because I enjoy solving problems and tuning ideas into something people can actually use overtime that end is became more serious when I started working on project for example I will tell AI based interview simulator that analysis not just technical responces but also communication aspects like confidence stone and body language working on that made me realise how powerful software can be and solving real problem  I have worked in with technology is that  ability to create impactful solutions and keep abolving with technology",
+            "score": {
+              "tech": 22,
+              "comm": 17,
+              "conf": 25
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "What is the difference between an array and a linked list?",
+            "a": "so the main difference between an array and the linked list is how they store data and half they are access to coming to an array stores element and contagious memory locations it also allows direct taxes using indexes it also has fixed size insertion delicious costly because elements need to be shifted when I coming to link list its two elements and non continuous memory access master Travels which take order of n and it is easy for insastion and deletion  so better when fast as this",
+            "score": {
+              "tech": 16,
+              "comm": 17,
+              "conf": 25
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Why did you choose this field and what excites you about it?",
+            "a": "honestly I choses feel because I have always enjoyed problems solving in building things when I first at learning programming I found it really interesting How a sample idea can be turned to a work in solution through a code that feeling of creating something from classes what will me in what excite me most about software engineering is how dynamic it is there is always something you to learn impact you can create and future for example when I work on an eibs interview how Technology can actually help people by improve their skills and very  I really enjoy the process of continuously learning experimenting and improving and that's what keeps in motivated in this field",
+            "score": {
+              "tech": 41,
+              "comm": 16,
+              "conf": 32
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "How do you handle a task you have never done before?",
+            "a": "when I come across a task I will done before I upload to step by step the first I tried to understand the problem clearly and break it down into smaller parts then I do some quick research like checking documents examples or similar implementations to get a basic idea of how it work after that I start with a simple version and gradually improve it if I get stuck I trying on my own first and needed I am open to ask you also make sure to learn from process so that the next time  I see and family",
+            "score": {
+              "tech": 15,
+              "comm": 37,
+              "conf": 31
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Where do you want to be professionally in 2 years?",
+            "a": "in the next 2 years I see myself growing into a strong and reliable software engineer I want a build a solid Foundation problem solving and core concepts while I am also gaining hands on experience working on Real world project I am particularly interested and improving my skills and back and development and building calab system along the way I want to contribute meaningfully to the team I am part of take ownership of task and keep learning new technology",
+            "score": {
+              "tech": 37,
+              "comm": 35,
+              "conf": 28
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [
+              "Good response length"
+            ],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          }
+        ],
+        "date": "2026-04-29T12:49:05.038Z"
+      }
+    },
+    {
+      "id": "1777456523340",
+      "timestamp": "2026-04-29T09:55:23.340Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 213,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 9,
+          "comm": 17,
+          "conf": 21,
+          "eye": 80,
+          "post": 74,
+          "overall": 40
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "Storehi  Darshan sir inspired us",
+            "score": {
+              "tech": 11,
+              "comm": 14,
+              "conf": 19
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "What are your strongest technical skills?",
+            "a": "I am good at I am good at  using anti gravity",
+            "score": {
+              "tech": 5,
+              "comm": 14,
+              "conf": 24
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "Describe a college project you are proud of.",
+            "a": "so we went to hacked also we made us can detection project and it was successful  so I am proud of that projects because it give very accurate results  We gave life pictures and detected with very accurate result and it was very efficient",
+            "score": {
+              "tech": 14,
+              "comm": 28,
+              "conf": 32
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "How do you approach debugging when your code does not work?",
+            "a": "first I'll check whether the back side where the bugs are there and later charges",
+            "score": {
+              "tech": 8,
+              "comm": 16,
+              "conf": 16
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "What is the difference between HTTP and HTTPS?",
+            "a": "hypertension telepathy and hypertension Tirupati successful",
+            "score": {
+              "tech": 6,
+              "comm": 15,
+              "conf": 16
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          }
+        ],
+        "date": "2026-04-29T09:55:23.331Z"
+      }
+    },
+    {
+      "id": "1777454181828",
+      "timestamp": "2026-04-29T09:16:21.828Z",
+      "payload": {
+        "name": "user",
+        "role": "Machine Learning Engineer",
+        "level": "Mid-level (3-6 years)",
+        "duration": 40,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 10,
+          "comm": 10,
+          "conf": 13,
+          "eye": 79,
+          "post": 85,
+          "overall": 39
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and the most impactful project you have led as a Machine Learning Engineer.",
+            "a": "",
+            "score": {
+              "tech": 0,
+              "comm": 0,
+              "conf": 0
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": [
+              "Next time, attempt the question even partially — partial answers score better than skipping."
+            ],
+            "status": "skip"
+          },
+          {
+            "q": "Describe a time a project failed — what did you learn and change?",
+            "a": "",
+            "score": {
+              "tech": 0,
+              "comm": 0,
+              "conf": 0
+            },
+            "aiFeedback": "No answer was provided. Try to speak at least a few sentences.",
+            "strengths": [],
+            "improvements": [
+              "Attempt the question next time — even a partial answer scores better than silence."
+            ],
+            "status": "unanswered"
+          },
+          {
+            "q": "Walk me through a system you designed that had to scale.",
+            "a": "I don't know",
+            "score": {
+              "tech": 48,
+              "comm": 49,
+              "conf": 63
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ],
+            "status": "answered"
+          },
+          {
+            "q": "How do you approach database schema design for a greenfield product?",
+            "a": "",
+            "score": {
+              "tech": 0,
+              "comm": 0,
+              "conf": 0
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": [
+              "Next time, attempt the question even partially — partial answers score better than skipping."
+            ],
+            "status": "skip"
+          },
+          {
+            "q": "Explain CAP theorem and how it influenced a design decision you made.",
+            "a": "",
+            "score": {
+              "tech": 0,
+              "comm": 0,
+              "conf": 0
+            },
+            "aiFeedback": "No answer was provided. Try to speak at least a few sentences.",
+            "strengths": [],
+            "improvements": [
+              "Attempt the question next time — even a partial answer scores better than silence."
+            ],
+            "status": "unanswered"
+          }
+        ],
+        "date": "2026-04-29T09:16:21.820Z"
+      }
+    },
+    {
+      "id": "1777452831423",
+      "timestamp": "2026-04-29T08:53:51.423Z",
+      "payload": {
+        "name": "user",
+        "role": "Machine Learning Engineer",
+        "level": "Junior (1-3 years)",
+        "duration": 37,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 20,
+          "comm": 20,
+          "conf": 20,
+          "eye": 80,
+          "post": 73,
+          "overall": 43
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and your experience so far as a Machine Learning Engineer.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Describe a production bug you fixed. What was your process?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "What is one technical skill you have improved recently?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "How do you write unit tests and why are they important?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Describe a challenging project and how you overcame a technical obstacle.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-29T08:53:51.416Z"
+      }
+    },
+    {
+      "id": "1777448316536",
+      "timestamp": "2026-04-29T07:38:36.536Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 6,
+        "questionsAnswered": 0,
+        "scores": {
+          "tech": 0,
+          "comm": 0,
+          "conf": 0,
+          "eye": 0,
+          "post": 0,
+          "overall": 0
+        },
+        "answers": [],
+        "date": "2026-04-29T07:38:36.515Z"
+      }
+    },
+    {
+      "id": "1777136214481",
+      "timestamp": "2026-04-25T16:56:54.481Z",
+      "payload": {
+        "name": "nikitha",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 117,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 40,
+          "comm": 44,
+          "conf": 56,
+          "eye": 81,
+          "post": 69,
+          "overall": 58
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "hello I am Nikita currently I am passing my BTech 2nd year in G narayanamma Institute what inspired  I want to become a software engineer  because it is interest it is interesting sector to me",
+            "score": {
+              "tech": 48,
+              "comm": 48,
+              "conf": 64
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Where do you want to be professionally in 2 years?",
+            "a": "I want to see myself in a good position in the same domain",
+            "score": {
+              "tech": 45,
+              "comm": 48,
+              "conf": 65
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What is the difference between an array and a linked list?",
+            "a": "are consists of elements and linker list these linked with another element",
+            "score": {
+              "tech": 47,
+              "comm": 53,
+              "conf": 63
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Describe a college project you are proud of.",
+            "a": "recently be created a project that is introductive  counselling it's about counselling session it is done through online which is helpful for most of the students",
+            "score": {
+              "tech": 42,
+              "comm": 52,
+              "conf": 66
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What programming languages are you comfortable with and why?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-25T16:56:54.470Z"
+      }
+    },
+    {
+      "id": "1777112466335",
+      "timestamp": "2026-04-25T10:21:06.335Z",
+      "payload": {
+        "name": "manaswini",
+        "role": "Frontend Developer",
+        "level": "Mid-level (3-6 years)",
+        "duration": 306,
+        "questionsAnswered": 2,
+        "scores": {
+          "tech": 44,
+          "comm": 45,
+          "conf": 43,
+          "eye": 78,
+          "post": 82,
+          "overall": 58
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and the most impactful project you have led as a Frontend Developer.",
+            "a": "I am a friend and developer for enjoys building user focus web application  that and clean responsive and practical like transforming ideas into interfaces that are easy to use valence good performance accessibility and smooth end interaction my strength include HTML CSS JavaScript responsive design UI and entering integrated system",
+            "score": {
+              "tech": 68,
+              "comm": 70,
+              "conf": 65
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "How do you manage technical debt while still shipping features?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-25T10:21:06.328Z"
+      }
+    },
+    {
+      "id": "1777111350046",
+      "timestamp": "2026-04-25T10:02:30.046Z",
+      "payload": {
+        "name": "vaishnavi",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 116,
+        "questionsAnswered": 8,
+        "scores": {
+          "tech": 33,
+          "comm": 35,
+          "conf": 43,
+          "eye": 88,
+          "post": 85,
+          "overall": 57
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "due to my coding skill",
+            "score": {
+              "tech": 42,
+              "comm": 52,
+              "conf": 64
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What is the difference between an array and a linked list?",
+            "a": "and array is a fixed memory size and linked list can be extended up to various size",
+            "score": {
+              "tech": 48,
+              "comm": 53,
+              "conf": 67
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Explain what Object-Oriented Programming means to you.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "What are your hobbies outside of work or study?",
+            "a": "I love editing videos",
+            "score": {
+              "tech": 48,
+              "comm": 48,
+              "conf": 64
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Why did you choose this field and what excites you about it?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "What are your strengths and areas you want to improve as a developer?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "Describe a college project you are proud of.",
+            "a": "we did I project called a solver game it is useful for gaming",
+            "score": {
+              "tech": 48,
+              "comm": 50,
+              "conf": 71
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What is the difference between HTTP and HTTPS?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          }
+        ],
+        "date": "2026-04-25T10:02:30.037Z"
+      }
+    },
+    {
+      "id": "1777111076625",
+      "timestamp": "2026-04-25T09:57:56.625Z",
+      "payload": {
+        "name": "K.Nandini",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 173,
+        "questionsAnswered": 8,
+        "scores": {
+          "tech": 42,
+          "comm": 46,
+          "conf": 62,
+          "eye": 81,
+          "post": 79,
+          "overall": 62
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "I want to be a software developers",
+            "score": {
+              "tech": 49,
+              "comm": 53,
+              "conf": 72
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "How do you approach debugging when your code does not work?",
+            "a": "I'll reject the call  check the call",
+            "score": {
+              "tech": 41,
+              "comm": 52,
+              "conf": 63
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Have you worked on any personal or college projects? Tell me about one.",
+            "a": "I did some tea project",
+            "score": {
+              "tech": 43,
+              "comm": 46,
+              "conf": 69
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What are your strongest technical skills?",
+            "a": "DSA  python",
+            "score": {
+              "tech": 41,
+              "comm": 49,
+              "conf": 67
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What is the difference between a stack and a queue?",
+            "a": "start has only one ask you has two ends correct and delete and insert data",
+            "score": {
+              "tech": 48,
+              "comm": 48,
+              "conf": 69
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What is the difference between an array and a linked list?",
+            "a": "another is head of elements of Same data die with as linked list is a stores the data elements are linked together",
+            "score": {
+              "tech": 48,
+              "comm": 50,
+              "conf": 68
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Explain what Object-Oriented Programming means to you.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "How do you handle a task you have never done before?",
+            "a": "I'll try to analyse what I have to do and then I will do that problem",
+            "score": {
+              "tech": 49,
+              "comm": 48,
+              "conf": 67
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          }
+        ],
+        "date": "2026-04-25T09:57:56.616Z"
+      }
+    },
+    {
+      "id": "1777110421701",
+      "timestamp": "2026-04-25T09:47:01.701Z",
+      "payload": {
+        "name": "Jayashree",
+        "role": "Business Analyst",
+        "level": "Fresher (0-1 years)",
+        "duration": 140,
+        "questionsAnswered": 8,
+        "scores": {
+          "tech": 37,
+          "comm": 37,
+          "conf": 48,
+          "eye": 86,
+          "post": 75,
+          "overall": 57
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Business Analyst.",
+            "a": "so I really love organising all my data and I think that can inspires and aspires me to become a business analysis and the I am also looking forward for myself in financial career",
+            "score": {
+              "tech": 48,
+              "comm": 48,
+              "conf": 69
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What is the difference between an array and a linked list?",
+            "a": "so the array is a sequential order in which the data is processing and in the linked list it is mostly based on the pointers like a that is no need for you to go in aquential order which reduce the data storage and impress the efficiency",
+            "score": {
+              "tech": 47,
+              "comm": 50,
+              "conf": 70
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Why did you choose this field and what excites you about it?",
+            "a": "I am so analysing the later is one of a is one of the biggest thing that inspire and also I will love to have great communication between so  I am a person who would like to talk to you",
+            "score": {
+              "tech": 41,
+              "comm": 48,
+              "conf": 68
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Where do you want to be professionally in 2 years?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "How do you handle a task you have never done before?",
+            "a": "first I will like to know about what I should be doing and then I will be looking after how I should do it and then I will see how great I can do it so that would be my upload",
+            "score": {
+              "tech": 50,
+              "comm": 46,
+              "conf": 66
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Explain what Object-Oriented Programming means to you.",
+            "a": "it's like It's like a product please oriented programming is what I feel like the complete idea of improving it revolves around an object",
+            "score": {
+              "tech": 49,
+              "comm": 46,
+              "conf": 53
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Tell me about yourself and what drew you to this field.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "What is the difference between a stack and a queue?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-25T09:47:01.691Z"
+      }
+    },
+    {
+      "id": "1777110147458",
+      "timestamp": "2026-04-25T09:42:27.458Z",
+      "payload": {
+        "name": "Harini",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 153,
+        "questionsAnswered": 8,
+        "scores": {
+          "tech": 43,
+          "comm": 41,
+          "conf": 52,
+          "eye": 70,
+          "post": 82,
+          "overall": 58
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "myself I am hurny and my does my sister inspired me to pursue software engineer",
+            "score": {
+              "tech": 41,
+              "comm": 53,
+              "conf": 71
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What programming languages are you comfortable with and why?",
+            "a": "I am comfortable with the language Python because it is easy to understand and also it is someone easy to code please comparing with other languages like C and seem this",
+            "score": {
+              "tech": 67,
+              "comm": 46,
+              "conf": 72
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What is the difference between an array and a linked list?",
+            "a": "array the elements are continuously store and in linked list they are connected by the list",
+            "score": {
+              "tech": 45,
+              "comm": 44,
+              "conf": 70
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "How do you approach debugging when your code does not work?",
+            "a": "by the debugging we come to know how the code works whenever we don't know where we are getting when we",
+            "score": {
+              "tech": 60,
+              "comm": 51,
+              "conf": 65
+            },
+            "aiFeedback": "Good technical content. Structure your answer more clearly using STAR or a logical flow.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What does it mean for code to be \"readable\"?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "Have you worked on any personal or college projects? Tell me about one.",
+            "a": "actually I didn't work and any one of the projects like technical related but I have done some of the projects related to maths Expo like the",
+            "score": {
+              "tech": 45,
+              "comm": 44,
+              "conf": 47
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Have you worked on any personal or college projects? Tell me about one.",
+            "a": "actually I didn't work and any one of the projects like technical related but I have done some of the projects related to maths Expo like the",
+            "score": {
+              "tech": 45,
+              "comm": 50,
+              "conf": 48
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Why did you choose this field and what excites you about it?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          }
+        ],
+        "date": "2026-04-25T09:42:27.450Z"
+      }
+    },
+    {
+      "id": "1777109901606",
+      "timestamp": "2026-04-25T09:38:21.606Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 112,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 25,
+          "comm": 26,
+          "conf": 29,
+          "eye": 76,
+          "post": 72,
+          "overall": 46
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Why did you choose this field and what excites you about it?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "What programming languages are you comfortable with and why?",
+            "a": "C program I was comfortable with C language",
+            "score": {
+              "tech": 47,
+              "comm": 49,
+              "conf": 64
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Can you explain what version control is and why it matters?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "What are your strengths and areas you want to improve as a developer?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          }
+        ],
+        "date": "2026-04-25T09:38:21.596Z"
+      }
+    },
+    {
+      "id": "1777109035319",
+      "timestamp": "2026-04-25T09:23:55.319Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 170,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 20,
+          "comm": 20,
+          "conf": 20,
+          "eye": 81,
+          "post": 78,
+          "overall": 44
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "What does good teamwork look like to you?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "Describe a time you had a conflict with a teammate and how you handled it.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "What is the difference between an array and a linked list?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "Explain what Object-Oriented Programming means to you.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          }
+        ],
+        "date": "2026-04-25T09:23:55.306Z"
+      }
+    },
+    {
+      "id": "1777107819322",
+      "timestamp": "2026-04-25T09:03:39.322Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 54,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 20,
+          "comm": 20,
+          "conf": 20,
+          "eye": 87,
+          "post": 86,
+          "overall": 47
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "What is the difference between a stack and a queue?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "Explain what Object-Oriented Programming means to you.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "How do you approach debugging when your code does not work?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "What are your strengths and areas you want to improve as a developer?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          }
+        ],
+        "date": "2026-04-25T09:03:39.313Z"
+      }
+    },
+    {
+      "id": "1777107210137",
+      "timestamp": "2026-04-25T08:53:30.137Z",
+      "payload": {
+        "name": "varshini",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 233,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 41,
+          "comm": 43,
+          "conf": 58,
+          "eye": 85,
+          "post": 66,
+          "overall": 59
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "so my name is Varshney and what inspired meaward inspired me with the most was my friend and  so I want to get high package",
+            "score": {
+              "tech": 44,
+              "comm": 44,
+              "conf": 69
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Describe a time you had a conflict with a teammate and how you handled it.",
+            "a": "so when I have a conflict with my teammate I handled in Amway it's a way School way",
+            "score": {
+              "tech": 49,
+              "comm": 45,
+              "conf": 67
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Can you explain what version control is and why it matters?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "Skipped.",
+            "strengths": [],
+            "improvements": []
+          },
+          {
+            "q": "What is the difference between a stack and a queue?",
+            "a": "stack is a FIFA in the curiously forin last out of  where I stack is first in first out  reversible",
+            "score": {
+              "tech": 47,
+              "comm": 53,
+              "conf": 68
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Describe a college project you are proud of.",
+            "a": "so are project is basically uses a webcam to detect the face detection and  it also give timely reminders for hydration and  next question",
+            "score": {
+              "tech": 46,
+              "comm": 52,
+              "conf": 66
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          }
+        ],
+        "date": "2026-04-25T08:53:30.119Z"
+      }
+    },
+    {
+      "id": "1777104783169",
+      "timestamp": "2026-04-25T08:13:03.169Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Mid-level (3-6 years)",
+        "duration": 24,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 30,
+          "comm": 33,
+          "conf": 39,
+          "eye": 81,
+          "post": 85,
+          "overall": 54
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and the most impactful project you have led as a Software Engineer.",
+            "a": "hi good afternoon my name is Tanmay and I am",
+            "score": {
+              "tech": 49,
+              "comm": 52,
+              "conf": 68
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Tell me about yourself and the most impactful project you have led as a Software Engineer.",
+            "a": "hi good afternoon my name is Tanmay and I am",
+            "score": {
+              "tech": 43,
+              "comm": 53,
+              "conf": 66
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Walk me through a system you designed that had to scale.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "How do you approach database schema design for a greenfield product?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "How do you evaluate whether to build a feature in-house or use a third-party service?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-25T08:13:03.164Z"
+      }
+    },
+    {
+      "id": "1777104727820",
+      "timestamp": "2026-04-25T08:12:07.820Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 28,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 20,
+          "comm": 20,
+          "conf": 20,
+          "eye": 72,
+          "post": 87,
+          "overall": 44
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "What is the difference between an array and a linked list?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "What is the difference between HTTP and HTTPS?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Explain what Object-Oriented Programming means to you.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "What are your strongest technical skills?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-25T08:12:07.814Z"
+      }
+    },
+    {
+      "id": "1777104649968",
+      "timestamp": "2026-04-25T08:10:49.968Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 10,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 31,
+          "comm": 32,
+          "conf": 40,
+          "eye": 80,
+          "post": 70,
+          "overall": 51
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "hi my name is",
+            "score": {
+              "tech": 50,
+              "comm": 52,
+              "conf": 72
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What is the difference between an array and a linked list?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "hi my name is",
+            "score": {
+              "tech": 46,
+              "comm": 50,
+              "conf": 68
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What are your strengths and areas you want to improve as a developer?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "What does it mean for code to be \"readable\"?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-25T08:10:49.962Z"
+      }
+    },
+    {
+      "id": "1777103582127",
+      "timestamp": "2026-04-25T07:53:02.127Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 94,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 26,
+          "comm": 26,
+          "conf": 30,
+          "eye": 80,
+          "post": 82,
+          "overall": 49
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what inspired you to pursue a career as a Software Engineer.",
+            "a": "hi good afternoon my name is",
+            "score": {
+              "tech": 48,
+              "comm": 50,
+              "conf": 71
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What is the difference between an array and a linked list?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "What programming languages are you comfortable with and why?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "How do you manage your time when working on multiple assignments?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Where do you want to be professionally in 2 years?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-25T07:53:02.120Z"
+      }
+    },
+    {
+      "id": "1777103045812",
+      "timestamp": "2026-04-25T07:44:05.812Z",
+      "payload": {
+        "name": "user",
+        "role": "Machine Learning Engineer",
+        "level": "Mid-level (3-6 years)",
+        "duration": 464,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 46,
+          "comm": 48,
+          "conf": 67,
+          "eye": 78,
+          "post": 83,
+          "overall": 64
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and the most impactful project you have led as a Machine Learning Engineer.",
+            "a": "have LED  project means what group  it is an eyeways virtual interview of platform with takes questions based on it and it analysis answers",
+            "score": {
+              "tech": 48,
+              "comm": 45,
+              "conf": 69
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "How do you evaluate whether to build a feature in-house or use a third-party service?",
+            "a": "I don't know",
+            "score": {
+              "tech": 41,
+              "comm": 53,
+              "conf": 66
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Describe your approach to refactoring a large legacy codebase.",
+            "a": "I will first libraries and also required and Maria  pick up",
+            "score": {
+              "tech": 48,
+              "comm": 47,
+              "conf": 63
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Tell me about a time you had to lead without formal authority.",
+            "a": "colour colourNCR was absent in our class I took responsibility and and  talk with faculty to cancel the class due to the problems faced by our class",
+            "score": {
+              "tech": 49,
+              "comm": 46,
+              "conf": 70
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What is your approach to incident management in production?",
+            "a": "what is they are simply going on like this okay you chat is there or no we will see and we will come  for that purpose",
+            "score": {
+              "tech": 42,
+              "comm": 48,
+              "conf": 65
+            },
+            "aiFeedback": "Add specific technical details, examples, or metrics to strengthen this answer.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          }
+        ],
+        "date": "2026-04-25T07:44:05.805Z"
+      }
+    },
+    {
+      "id": "1777101032742",
+      "timestamp": "2026-04-25T07:10:32.742Z",
+      "payload": {
+        "name": "user",
+        "role": "Machine Learning Engineer",
+        "level": "Mid-level (3-6 years)",
+        "duration": 145,
+        "questionsAnswered": 8,
+        "scores": {
+          "tech": 45,
+          "comm": 47,
+          "conf": 68,
+          "eye": 72,
+          "post": 86,
+          "overall": 64
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what led you to pursue a career as a Machine Learning Engineer.",
+            "a": "I just want to purposeI just want to first you machine learning because I am interested in it",
+            "score": {
+              "tech": 45,
+              "comm": 46,
+              "conf": 71
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Walk me through your MLOps experience.",
+            "a": "I am not really experienced in ml office",
+            "score": {
+              "tech": 41,
+              "comm": 46,
+              "conf": 67
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Where do you see yourself in 3-5 years?",
+            "a": "I want to be well settled in this field as ml engineer",
+            "score": {
+              "tech": 50,
+              "comm": 44,
+              "conf": 71
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "How do you take a model from research to production?",
+            "a": "by the searching clearly and taking few steps by including every feature and calculating every detail",
+            "score": {
+              "tech": 48,
+              "comm": 46,
+              "conf": 65
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "Tell me about a time you failed and what you learned.",
+            "a": "I just realized I need more practice and more self confidence",
+            "score": {
+              "tech": 41,
+              "comm": 51,
+              "conf": 67
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "What makes you stand out from other candidates?",
+            "a": "because I am unique",
+            "score": {
+              "tech": 43,
+              "comm": 46,
+              "conf": 69
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "How do you monitor models in production for drift?",
+            "a": "handle them with care and all",
+            "score": {
+              "tech": 48,
+              "comm": 51,
+              "conf": 65
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          },
+          {
+            "q": "How do you approach hyperparameter tuning at scale?",
+            "a": "I am not really good in the concept of hyperpyramid tuning scale",
+            "score": {
+              "tech": 43,
+              "comm": 45,
+              "conf": 65
+            },
+            "aiFeedback": "Answer was too brief — aim for at least 60-80 words with clear reasoning.",
+            "strengths": [],
+            "improvements": [
+              "Use the STAR method: Situation, Task, Action, Result"
+            ]
+          }
+        ],
+        "date": "2026-04-25T07:10:32.736Z"
+      }
+    },
+    {
+      "id": "1777100335506",
+      "timestamp": "2026-04-25T06:58:55.506Z",
+      "payload": {
+        "name": "user",
+        "role": "Machine Learning Engineer",
+        "level": "Mid-level (3-6 years)",
+        "duration": 118,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 20,
+          "comm": 20,
+          "conf": 20,
+          "eye": 75,
+          "post": 86,
+          "overall": 44
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and the most impactful project you have led as a Machine Learning Engineer.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "How do you mentor junior developers effectively?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Explain CAP theorem and how it influenced a design decision you made.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Tell me about yourself and the most impactful project you have led.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "How do you ensure code quality across a team — beyond just code reviews?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-25T06:58:55.501Z"
+      }
+    },
+    {
+      "id": "1777099573506",
+      "timestamp": "2026-04-25T06:46:13.506Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Junior (1-3 years)",
+        "duration": 10,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 20,
+          "comm": 20,
+          "conf": 20,
+          "eye": 77,
+          "post": 79,
+          "overall": 43
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and your experience so far as a Software Engineer.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Walk me through a feature you built end-to-end in your first job.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "How do you write unit tests and why are they important?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Tell me about a time you received critical feedback on your code.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Explain the difference between SQL and NoSQL databases.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-25T06:46:13.501Z"
+      }
+    },
+    {
+      "id": "1777091033282",
+      "timestamp": "2026-04-25T04:23:53.282Z",
+      "payload": {
+        "name": "subha lakshmi",
+        "role": "Software Engineer",
+        "level": "Senior (6+ years)",
+        "duration": 132,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 31,
+          "comm": 31,
+          "conf": 40,
+          "eye": 69,
+          "post": 84,
+          "overall": 51
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what led you to pursue a career as a Software Engineer.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "How do you ensure code quality? Tests, code reviews?",
+            "a": "software face",
+            "score": {
+              "tech": 48,
+              "comm": 51,
+              "conf": 68
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "Where do you see yourself in 3-5 years?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "What are your greatest strengths for this role?",
+            "a": "to become a good role of  senior most software",
+            "score": {
+              "tech": 46,
+              "comm": 45,
+              "conf": 70
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "How do you handle disagreements with colleagues?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-25T04:23:53.279Z"
+      }
+    },
+    {
+      "id": "1777090698449",
+      "timestamp": "2026-04-25T04:18:18.449Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 10,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 20,
+          "comm": 20,
+          "conf": 20,
+          "eye": 74,
+          "post": 68,
+          "overall": 40
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what led you to pursue a career as a Software Engineer.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Describe a time you worked under pressure.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "What is your experience with cloud platforms?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Walk me through your experience with data structures.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Where do you see yourself in 3-5 years?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-25T04:18:18.445Z"
+      }
+    },
+    {
+      "id": "1777089960698",
+      "timestamp": "2026-04-25T04:06:00.698Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 58,
+        "questionsAnswered": 0,
+        "scores": {
+          "tech": 0,
+          "comm": 0,
+          "conf": 0,
+          "eye": 0,
+          "post": 0,
+          "overall": 0
+        },
+        "answers": [],
+        "date": "2026-04-25T04:06:00.679Z"
+      }
+    },
+    {
+      "id": "1776322874131",
+      "timestamp": "2026-04-16T07:01:14.131Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 144,
+        "questionsAnswered": 8,
+        "scores": {
+          "tech": 41,
+          "comm": 48,
+          "conf": 62,
+          "eye": 77,
+          "post": 65,
+          "overall": 59
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what led you to pursue a career as a Software Engineer.",
+            "a": "hi this is Nikita currently I am passing my BTech 2nd year engineering  coding so I want to become head software engineer",
+            "score": {
+              "tech": 46,
+              "comm": 44,
+              "conf": 64
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "Describe a challenging bug you fixed in production.",
+            "a": "after now I didn't do anything",
+            "score": {
+              "tech": 41,
+              "comm": 51,
+              "conf": 68
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "Explain REST vs GraphQL — when would you choose each?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Describe a time you worked under pressure.",
+            "a": "recently I worked for a mini project",
+            "score": {
+              "tech": 47,
+              "comm": 70,
+              "conf": 65
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "Walk me through your experience with data structures.",
+            "a": "I know some basic about data structures and currently I don't know much about it",
+            "score": {
+              "tech": 41,
+              "comm": 53,
+              "conf": 71
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "How do you ensure code quality? Tests, code reviews?",
+            "a": "intermediate",
+            "score": {
+              "tech": 43,
+              "comm": 51,
+              "conf": 68
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "What are your greatest strengths for this role?",
+            "a": "I am good at coding and I'm passionate according",
+            "score": {
+              "tech": 44,
+              "comm": 48,
+              "conf": 71
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "What is your experience with cloud platforms?",
+            "a": "it's very helpful  for doing any projects",
+            "score": {
+              "tech": 49,
+              "comm": 45,
+              "conf": 71
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          }
+        ],
+        "date": "2026-04-16T07:01:14.125Z"
+      }
+    },
+    {
+      "id": "1776319353256",
+      "timestamp": "2026-04-16T06:02:33.257Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 218,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 30,
+          "comm": 30,
+          "conf": 38,
+          "eye": 74,
+          "post": 73,
+          "overall": 49
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what led you to pursue a career as a Software Engineer.",
+            "a": "I am srehita",
+            "score": {
+              "tech": 41,
+              "comm": 45,
+              "conf": 65
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "How do you handle complex git merge conflicts?",
+            "a": "I don't know",
+            "score": {
+              "tech": 48,
+              "comm": 45,
+              "conf": 64
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "What are your greatest strengths for this role?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "How do you handle disagreements with colleagues?",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          },
+          {
+            "q": "Describe a time you had to refactor a large codebase.",
+            "a": "",
+            "score": {
+              "tech": 20,
+              "comm": 20,
+              "conf": 20
+            },
+            "aiFeedback": "No meaningful answer provided.",
+            "strengths": [],
+            "improvements": [
+              "Speak a full answer before clicking Next Question."
+            ]
+          }
+        ],
+        "date": "2026-04-16T06:02:33.254Z"
+      }
+    },
+    {
+      "id": "1776319095583",
+      "timestamp": "2026-04-16T05:58:15.583Z",
+      "payload": {
+        "name": "user",
+        "role": "Product Manager",
+        "level": "Fresher (0-1 years)",
+        "duration": 119,
+        "questionsAnswered": 2,
+        "scores": {
+          "tech": 46,
+          "comm": 48,
+          "conf": 68,
+          "eye": 69,
+          "post": 70,
+          "overall": 60
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what led you to pursue a career as a Product Manager.",
+            "a": "pancoalacan I skip this",
+            "score": {
+              "tech": 47,
+              "comm": 46,
+              "conf": 72
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "How do you prioritize features with limited engineering resources?",
+            "a": "I don't know",
+            "score": {
+              "tech": 45,
+              "comm": 49,
+              "conf": 64
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          }
+        ],
+        "date": "2026-04-16T05:58:15.576Z"
+      }
+    },
+    {
+      "id": "1776318698573",
+      "timestamp": "2026-04-16T05:51:38.573Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "level": "Fresher (0-1 years)",
+        "duration": 128,
+        "questionsAnswered": 5,
+        "scores": {
+          "tech": 51,
+          "comm": 50,
+          "conf": 66,
+          "eye": 77,
+          "post": 82,
+          "overall": 65
+        },
+        "answers": [
+          {
+            "q": "Tell me about yourself and what led you to pursue a career as a Software Engineer.",
+            "a": "sorry I couldn't get it can you repeatcan we skip I couldn't do the question I like to answer the next question",
+            "score": {
+              "tech": 47,
+              "comm": 53,
+              "conf": 66
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "What motivates you about this role?",
+            "a": "I am always wanted to be a software engineer just so I want to do be here",
+            "score": {
+              "tech": 41,
+              "comm": 53,
+              "conf": 63
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "What design patterns do you use and why?",
+            "a": "I have a very less knowledge and design patterns so I can actually answer this question",
+            "score": {
+              "tech": 66,
+              "comm": 44,
+              "conf": 72
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "Where do you see yourself in 3-5 years?",
+            "a": "I don't know when  I takes me I'll go there",
+            "score": {
+              "tech": 44,
+              "comm": 53,
+              "conf": 65
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "How would you design a URL shortener at scale?",
+            "a": "I'll just repeat it how to design a girl",
+            "score": {
+              "tech": 59,
+              "comm": 47,
+              "conf": 63
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          }
+        ],
+        "date": "2026-04-16T05:51:38.567Z"
+      }
+    },
+    {
+      "id": "1776275136269",
+      "timestamp": "2026-04-15T17:45:36.270Z",
+      "payload": {
+        "name": "user",
+        "role": "Software Engineer",
+        "scores": {
+          "tech": 47,
+          "comm": 49,
+          "conf": 66,
+          "eye": 83,
+          "post": 82,
+          "overall": 65
+        },
+        "answers": [
+          {
+            "q": "Describe a time you worked under pressure to meet a tight deadline.",
+            "a": "I know can I skip",
+            "score": {
+              "tech": 44,
+              "comm": 45,
+              "conf": 68
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          },
+          {
+            "q": "How would you design a URL shortener that handles millions of requests per day?",
+            "a": "I don't know",
+            "score": {
+              "tech": 49,
+              "comm": 52,
+              "conf": 64
+            },
+            "aiFeedback": "Using local estimate — AI scoring temporarily unavailable.",
+            "strengths": [],
+            "improvements": [
+              "Structure answers using STAR method"
+            ]
+          }
+        ],
+        "date": "2026-04-15T17:45:36.265Z"
+      }
+    }
+  ]
+}
